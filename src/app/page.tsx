@@ -1,4 +1,4 @@
-import { Banner, Footer, Header } from "@/components";
+import { Banner, Cards, Footer, Header } from "@/components";
 
 export default function Home() {
   return (
@@ -13,6 +13,11 @@ export default function Home() {
         subtitle="SEGUNDO SEMESTRE DE 2025"
         className="text-white"
       />
+
+      <main className="flex flex-col items-center justify-center p-4 bg-white text-black">
+        <Cards />
+      </main>
+
       <Footer />
     </div>
   );
