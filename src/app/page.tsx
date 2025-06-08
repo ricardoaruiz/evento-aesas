@@ -2,8 +2,8 @@ import { Banner, Cards, Footer, Header } from "@/components";
 
 export default function Home() {
   return (
-    <div className="flex flex-col container max-w-[1040px] mx-auto min-h-dvh">
-      <div className="sticky top-0 z-10 bg-white z-50">
+    <div className="flex flex-col container max-w-[1000px] mx-auto min-h-dvh">
+      <div className="sticky top-0 bg-white z-50">
         <Header
           title="ENCONTROS TÉCNICOS"
           subtitle="DE GERENCIAMENTO DE ÁREAS CONTAMINADAS"

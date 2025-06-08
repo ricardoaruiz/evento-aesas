@@ -20,12 +20,12 @@ export function Card({
   const contentTitleFontSize = (() => {
     switch (contentTileSize) {
       case "small":
-        return "text-xs";
+        return "text-sm";
       case "large":
-        return "text-lg";
+        return "text-xl";
       case "medium":
       default:
-        return "text-sm";
+        return "text-lg";
     }
   })();
 
@@ -54,9 +54,9 @@ export function Card({
         >
           {contentTitle}
         </p>
-        <p className="text-xs font-bold text-center">{contentDescription}</p>
+        <p className="text-sm font-bold text-center">{contentDescription}</p>
 
-        <div className="flex flex-col items-center text-xs">
+        <div className="flex flex-col items-center text-sm">
           <p className="text-center">
             <span className="mr-1 font-bold">ONLINE:</span>
             <span>{onlineTime}</span>
@@ -65,7 +65,7 @@ export function Card({
         </div>
 
         {presencialTime && presencialDates && (
-          <div className="flex flex-col items-center text-xs">
+          <div className="flex flex-col items-center text-sm">
             <p className="text-center">
               <span className="mr-1 font-bold">PRESENCIAL:</span>
               <span>{presencialTime}</span>
