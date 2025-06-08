@@ -1,0 +1,15 @@
+export const CALENDAR_SLUG_QUERY = `*[_type == "calendar"]{
+  slug
+}`;
+
+export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
+  slug,
+  header->{
+    firstLine,
+    secondLine,
+  },
+  banner->{
+    firstLine,
+    secondLine,
+  }
+}`;
