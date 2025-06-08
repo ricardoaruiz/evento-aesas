@@ -72,6 +72,102 @@ export function Cards() {
         footerText="Carga Horária: 24h"
         // className="w-[220px] min-h-[300px]"
       />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
+      <Card
+        title="NOVEMBRO"
+        contentTitle="GEOLOGIA E HIDROGEOLOGIA APLICADA AO GAC"
+        contentTileSize="small"
+        contentDescription="aulas on-line"
+        onlineTime="das 8h às 12h"
+        onlineDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialDates="02/09, 04/09, 09/09, 11/09, 16/09, 18/09"
+        presencialTime="das 13h às 17h"
+        footerText="Carga Horária: 24h"
+        // className="w-[220px] min-h-[300px]"
+      />
     </div>
   );
 }
