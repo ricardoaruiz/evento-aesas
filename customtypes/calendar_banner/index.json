@@ -1,0 +1,31 @@
+{
+  "format": "custom",
+  "id": "calendar_banner",
+  "label": "calendar_banner",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": "Título"
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "subtitle",
+          "placeholder": "Subtitulo"
+        }
+      }
+    }
+  }
+}
