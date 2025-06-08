@@ -1,23 +1,24 @@
-import { getCalendarSlugs } from "@/service";
-import Link from "next/link";
+import { Banner, Cards, Footer, Header } from "@/components";
 
-export default async function Home() {
-  const slugs = await getCalendarSlugs();
-
+export default function Home() {
   return (
     <div className="container max-w-[1040px] mx-auto">
-      <ul className="flex gap-4">
-        {slugs.map((slug) => (
-          <li key={slug}>
-            <Link
-              href={`/calendar/${slug}`}
-              className="text-blue-500 hover:underline"
-            >
-              {slug}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Header
+        title="ENCONTROS TÉCNICOS"
+        subtitle="DE GERENCIAMENTO DE ÁREAS CONTAMINADAS"
+        className="text-black"
+      />
+      <Banner
+        title="AGENDA DE EVENTOS"
+        subtitle="SEGUNDO SEMESTRE DE 2025"
+        className="text-white"
+      />
+
+      <main className="flex flex-col items-center justify-center p-4 bg-white text-black">
+        <Cards />
+      </main>
+
+      <Footer />
     </div>
   );
 }
