@@ -11,5 +11,19 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
   banner->{
     firstLine,
     secondLine,
+  },
+  "events": events[]->{
+    month,
+    contentTitle,
+    contentDescription,
+    onlineTime,
+    onlineDates,
+    presencialTime,
+    presencialDates,
+    footerText,
+    contentTileSize,
+    tagText,
+    tagTextSize,
+    tagVariant
   }
 }`;

@@ -1,4 +1,9 @@
 import { Banner, Cards, Footer, Header } from "@/components";
+import { ContentTypeSize } from "@/components/cards/card/card.types";
+import {
+  TagTextSize,
+  TagVariantColor,
+} from "@/components/cards/card/tag/tag.types";
 import { getCalendar, getCalendarsSlug } from "@/service";
 import { notFound } from "next/navigation";
 
@@ -22,6 +27,21 @@ export default async function CalendarPage({ params }: CalendarProps) {
     return notFound();
   }
 
+  const events = calendar.events.map((event) => ({
+    title: event.month.toUpperCase(),
+    contentTitle: event.contentTitle,
+    contentDescription: event.contentDescription,
+    onlineTime: event.onlineTime,
+    onlineDates: event.onlineDates,
+    presencialTime: event.presencialTime,
+    presencialDates: event.presencialDates,
+    footerText: event.footerText,
+    contentTileSize: event.contentTileSize as ContentTypeSize,
+    tagText: event.tagText,
+    tagTextSize: event.tagTextSize as TagTextSize,
+    tagVariant: event.tagVariant as TagVariantColor,
+  }));
+
   return (
     <div className="flex flex-col container max-w-[1000px] mx-auto min-h-dvh">
       <div className="sticky top-0 bg-white z-50">
@@ -38,7 +58,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
       </div>
 
       <main className="flex-1 items-center justify-center p-4 bg-white text-black">
-        <Cards />
+        <Cards data={events} />
       </main>
 
       <Footer />

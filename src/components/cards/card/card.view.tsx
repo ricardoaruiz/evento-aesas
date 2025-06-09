@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useMemo } from "react";
 import { CardProps } from "./card.types";
 import { Tag } from "./tag/tag.view";
 
@@ -11,13 +12,13 @@ export function Card({
   presencialTime,
   presencialDates,
   footerText,
-  contentTileSize = "medium",
+  contentTileSize,
   tagText,
   tagTextSize,
   tagVariant,
   className,
 }: CardProps) {
-  const contentTitleFontSize = (() => {
+  const contentTitleFontSize = useMemo(() => {
     switch (contentTileSize) {
       case "small":
         return "text-sm";
@@ -27,7 +28,7 @@ export function Card({
       default:
         return "text-lg";
     }
-  })();
+  }, [contentTileSize]);
 
   return (
     <div className={cn("relative flex flex-col p-2", className)}>
@@ -49,9 +50,7 @@ export function Card({
 
       {/* Body */}
       <div className="flex flex-col gap-[10px] p-[10px] border-l border-l-blue-500 border-r border-r-blue-500 flex-1">
-        <p
-          className={cn("text-sm font-bold text-center", contentTitleFontSize)}
-        >
+        <p className={cn("font-bold text-center", contentTitleFontSize)}>
           {contentTitle}
         </p>
         <p className="text-sm font-bold text-center">{contentDescription}</p>

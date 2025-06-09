@@ -10,7 +10,7 @@ export default async function Home() {
         {slugs.map((slug) => (
           <li key={slug}>
             <Link
-              href={`/calendar/${slug}`}
+              href={`/calendario/${slug}`}
               className="text-blue-500 hover:underline"
             >
               {slug}

@@ -52,5 +52,21 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
       firstLine: calendar.banner.firstLine,
       secondLine: calendar.banner.secondLine,
     },
+    events: !calendar.events
+      ? []
+      : calendar.events.map((event) => ({
+          month: event.month,
+          contentTitle: event.contentTitle,
+          contentDescription: event.contentDescription,
+          onlineTime: event.onlineTime,
+          onlineDates: event.onlineDates,
+          presencialTime: event.presencialTime,
+          presencialDates: event.presencialDates,
+          footerText: event.footerText,
+          contentTileSize: event.contentTileSize,
+          tagText: event.tagText,
+          tagTextSize: event.tagTextSize,
+          tagVariant: event.tagVariant,
+        })),
   };
 }
