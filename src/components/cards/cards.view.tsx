@@ -7,7 +7,7 @@ type CardsProps = {
 
 export function Cards({ data }: CardsProps) {
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+    <div className="container mx-auto place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
       {data.map((item, index) => (
         <Card
           key={index}
@@ -23,7 +23,7 @@ export function Cards({ data }: CardsProps) {
           tagText={item.tagText}
           tagTextSize={item.tagTextSize}
           tagVariant={item.tagVariant}
-          // className="w-[220px] min-h-[300px]"
+          className="w-full max-w-[300px] self-stretch"
         />
       ))}
     </div>

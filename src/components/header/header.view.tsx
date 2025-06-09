@@ -8,7 +8,8 @@ export function Header({ title, subtitle, className }: BannerProps) {
   return (
     <header
       className={cn(
-        "bg-white flex flex-col md:flex-row justify-between gap-[10px] text-black p-2",
+        "bg-white flex flex-col md:flex-row justify-between gap-[10px] text-black py-2 px-10",
+        "bg-[url('/images/fundo.png')] bg-cover bg-center",
         className
       )}
     >

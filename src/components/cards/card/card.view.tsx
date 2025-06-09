@@ -31,13 +31,15 @@ export function Card({
   }, [contentTileSize]);
 
   return (
-    <div className={cn("relative flex flex-col p-2", className)}>
+    <div
+      className={cn("relative flex flex-col p-1 overflow-hidden", className)}
+    >
       {tagText && (
         <Tag
           text={tagText}
           textSize={tagTextSize}
           variant={tagVariant}
-          className="-top-7 -right-6"
+          className="top-0 right-0"
         />
       )}
 
@@ -49,8 +51,13 @@ export function Card({
       </div>
 
       {/* Body */}
-      <div className="flex flex-col gap-[10px] p-[10px] border-l border-l-blue-500 border-r border-r-blue-500 flex-1">
-        <p className={cn("font-bold text-center", contentTitleFontSize)}>
+      <div className="flex flex-col gap-[10px] p-[10px] border-l border-l-blue-500 border-r border-r-blue-500 flex-1 bg-white">
+        <p
+          className={cn(
+            "font-bold text-center w-full px-2 mx-auto",
+            contentTitleFontSize
+          )}
+        >
           {contentTitle}
         </p>
         <p className="text-sm font-bold text-center">{contentDescription}</p>

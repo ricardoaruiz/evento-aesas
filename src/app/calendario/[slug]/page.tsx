@@ -57,7 +57,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
         />
       </div>
 
-      <main className="flex-1 items-center justify-center p-4 bg-white text-black">
+      <main className="flex-1 items-center justify-center py-4 px-1 md:px-10 bg-white text-black bg-[url('/images/fundo.png')] bg-cover bg-center">
         <Cards data={events} />
       </main>
 
