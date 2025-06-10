@@ -2,9 +2,8 @@ import { cn } from "@/lib/utils";
 import { BannerProps } from "./banner.types";
 
 export function Banner({ title, subtitle, color, className }: BannerProps) {
-  const degradientColor = color
-    ? `bg-gradient-to-t from-${color}-500 to-${color}-800`
-    : "bg-gradient-to-t from-blue-500 to-blue-800";
+  const internalColor = color || "blue";
+  const degradientColor = `bg-gradient-to-t from-${internalColor}-500 to-${internalColor}-800`;
 
   return (
     <div

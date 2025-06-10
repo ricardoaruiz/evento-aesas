@@ -4,9 +4,8 @@ import logoMinistery from "../../../public/images/logo_ministerio.svg";
 import logoSoldi from "../../../public/images/logo_soldi.svg";
 import { FooterProps } from "./footer.types";
 export function Footer({ color, className, ...props }: FooterProps) {
-  const degradientColor = color
-    ? `bg-gradient-to-t from-${color}-500 to-${color}-800`
-    : "bg-gradient-to-t from-blue-500 to-blue-800";
+  const internalColor = color || "blue";
+  const degradientColor = `bg-gradient-to-t from-${internalColor}-500 to-${internalColor}-800`;
 
   return (
     <footer
