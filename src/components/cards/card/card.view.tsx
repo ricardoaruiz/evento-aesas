@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, getGradientColor } from "@/lib/utils";
 import { useMemo } from "react";
 import { CardProps } from "./card.types";
 import { Tag } from "./tag/tag.view";
@@ -19,8 +19,7 @@ export function Card({
   color,
   className,
 }: CardProps) {
-  const internalColor = color || "blue";
-  const degradientColor = `bg-gradient-to-t from-${internalColor}-500 to-${internalColor}-800`;
+  const gradientInternalColor = getGradientColor(color);
 
   const contentTitleFontSize = useMemo(() => {
     switch (contentTileSize) {
@@ -36,7 +35,10 @@ export function Card({
 
   return (
     <div
-      className={cn("relative flex flex-col p-1 overflow-hidden", className)}
+      className={cn(
+        "relative flex flex-col p-1 overflow-hidden bg-transparent",
+        className
+      )}
     >
       {tagText && (
         <Tag
@@ -52,7 +54,7 @@ export function Card({
         <div
           className={cn(
             "flex justify-center items-center p-1  text-white rounded-t-md",
-            degradientColor
+            gradientInternalColor
           )}
         >
           <h3 className="text-2xl font-bold">{title}</h3>
@@ -94,7 +96,7 @@ export function Card({
       <div
         className={cn(
           "flex justify-center py-1 bg-blue-500 text-white rounded-b-md shadow-md text-lg",
-          degradientColor
+          gradientInternalColor
         )}
       >
         <p className="font-bold">{footerText}</p>

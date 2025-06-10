@@ -1,16 +1,15 @@
-import { cn } from "@/lib/utils";
+import { cn, getGradientColor } from "@/lib/utils";
 import { BannerProps } from "./banner.types";
 
 export function Banner({ title, subtitle, color, className }: BannerProps) {
-  const internalColor = color || "blue";
-  const degradientColor = `bg-gradient-to-t from-${internalColor}-500 to-${internalColor}-800`;
+  const gradientInternalColor = getGradientColor(color);
 
   return (
     <div
       className={cn(
-        // "bg-gradient-to-t from-green-500 to-green-800",
-        degradientColor,
+        gradientInternalColor,
         "p-4 flex flex-col gap-2 items-center text-xl md:text-2xl font-bold",
+        "shadow-lg shadow-gray-500/50",
         className
       )}
     >

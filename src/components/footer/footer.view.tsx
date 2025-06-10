@@ -1,17 +1,17 @@
-import { cn } from "@/lib/utils";
+import { cn, getGradientColor } from "@/lib/utils";
 import Image from "next/image";
 import logoMinistery from "../../../public/images/logo_ministerio.svg";
 import logoSoldi from "../../../public/images/logo_soldi.svg";
 import { FooterProps } from "./footer.types";
 export function Footer({ color, className, ...props }: FooterProps) {
-  const internalColor = color || "blue";
-  const degradientColor = `bg-gradient-to-t from-${internalColor}-500 to-${internalColor}-800`;
+  const gradientInternalColor = getGradientColor(color);
 
   return (
     <footer
       className={cn(
         "flex flex-col gap-10 lg:flex-row lg:gap-2 p-4",
-        degradientColor,
+        "inset-shadow-sm inset-shadow-gray-500",
+        gradientInternalColor,
         className
       )}
       {...props}
