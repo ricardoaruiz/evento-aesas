@@ -1,9 +1,13 @@
-import { Banner, Cards, Footer, Header } from "@/components";
-import { ContentTypeSize } from "@/components/cards/card/card.types";
 import {
-  TagTextSize,
-  TagVariantColor,
-} from "@/components/cards/card/tag/tag.types";
+  Banner,
+  Cards,
+  Footer,
+  Header,
+  type ContentTypeSize,
+  type TagTextSize,
+  type TagVariantColor,
+} from "@/components";
+
 import { getCalendar, getCalendarsSlug } from "@/service";
 import { notFound } from "next/navigation";
 

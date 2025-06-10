@@ -1,1 +1,2 @@
-export * from './cards.view'
+export * from "./card";
+export * from "./cards.view";
