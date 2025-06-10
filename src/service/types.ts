@@ -26,4 +26,13 @@ export type Calendar = {
   header: CalendarHeader;
   banner: CalendarBanner;
   events: Event[];
+  poster?: Image;
+};
+
+export type Image = {
+  uploadId: string;
+  mimeType: string;
+  originalFilename: string;
+  size: number;
+  url: string;
 };

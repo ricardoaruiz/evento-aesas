@@ -38,13 +38,13 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
       },
     }
   );
-
   const [calendar] = data;
   if (!calendar) return null;
 
   return {
     slug: calendar.slug,
     color: calendar.color,
+    poster: calendar.poster,
     header: {
       firstLine: calendar.header.firstLine,
       secondLine: calendar.header.secondLine,

@@ -5,6 +5,13 @@ export const CALENDAR_SLUG_QUERY = `*[_type == "calendar"]{
 export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
   slug,
   color,
+  "poster": poster.asset->{
+    uploadId,
+    mimeType,
+    originalFilename,
+    size,
+    url
+  },
   header->{
     firstLine,
     secondLine,

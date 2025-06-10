@@ -10,6 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 
 import { getCalendar, getCalendarsSlug } from "@/service";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type CalendarProps = {
@@ -45,6 +46,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
     tagText: event.tagText,
     tagTextSize: event.tagTextSize as TagTextSize,
     tagVariant: event.tagVariant as TagVariantColor,
+    poster: calendar.poster,
   }));
 
   return (
@@ -64,6 +66,16 @@ export default async function CalendarPage({ params }: CalendarProps) {
       </div>
 
       <main className="flex-1 items-center justify-center py-4 px-1 md:px-10 bg-white text-black bg-[url('/images/fundo.png')] bg-cover bg-center">
+        {calendar.poster && (
+          <div className="relative w-full h-[300px] mb-4">
+            <Image
+              src={calendar.poster.url}
+              alt={calendar.poster.originalFilename}
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
         <Cards data={events} color={calendar.color} />
       </main>
 
