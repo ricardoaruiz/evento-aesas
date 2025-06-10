@@ -38,36 +38,13 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
       },
     }
   );
-  const [calendar] = data;
-  if (!calendar) return null;
 
-  return {
-    slug: calendar.slug,
-    color: calendar.color,
-    poster: calendar.poster,
-    header: {
-      firstLine: calendar.header.firstLine,
-      secondLine: calendar.header.secondLine,
-    },
-    banner: {
-      firstLine: calendar.banner.firstLine,
-      secondLine: calendar.banner.secondLine,
-    },
-    events: !calendar.events
-      ? []
-      : calendar.events.map((event) => ({
-          month: event.month,
-          contentTitle: event.contentTitle,
-          contentDescription: event.contentDescription,
-          onlineTime: event.onlineTime,
-          onlineDates: event.onlineDates,
-          presencialTime: event.presencialTime,
-          presencialDates: event.presencialDates,
-          footerText: event.footerText,
-          contentTileSize: event.contentTileSize,
-          tagText: event.tagText,
-          tagTextSize: event.tagTextSize,
-          tagVariant: event.tagVariant,
-        })),
-  };
+  const [calendar] = data;
+
+  return !calendar
+    ? null
+    : {
+        ...calendar,
+        events: calendar.events ?? [],
+      };
 }

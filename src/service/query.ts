@@ -21,7 +21,7 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
     secondLine,
   },
   "events": events[]->{
-    month,
+    "title": month,
     contentTitle,
     contentDescription,
     onlineTime,

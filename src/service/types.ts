@@ -7,7 +7,7 @@ export type CalendarBanner = {
   secondLine: string;
 };
 export type Event = {
-  month: string;
+  title: string;
   contentTitle: string;
   contentDescription: string;
   onlineTime: string;

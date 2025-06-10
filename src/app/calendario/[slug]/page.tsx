@@ -13,18 +13,6 @@ import { getCalendar, getCalendarsSlug } from "@/service";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-type CalendarProps = {
-  params: Promise<{ slug: string }>;
-};
-
-export async function generateStaticParams() {
-  const slugs = await getCalendarsSlug();
-
-  return slugs.map((slug: string) => ({
-    slug,
-  }));
-}
-
 export default async function CalendarPage({ params }: CalendarProps) {
   const { slug } = await params;
   const calendar = await getCalendar(slug);
@@ -34,7 +22,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
   }
 
   const events = calendar.events.map((event) => ({
-    title: event.month.toUpperCase(),
+    title: event.title.toUpperCase(),
     contentTitle: event.contentTitle,
     contentDescription: event.contentDescription,
     onlineTime: event.onlineTime,
@@ -46,7 +34,6 @@ export default async function CalendarPage({ params }: CalendarProps) {
     tagText: event.tagText,
     tagTextSize: event.tagTextSize as TagTextSize,
     tagVariant: event.tagVariant as TagVariantColor,
-    poster: calendar.poster,
   }));
 
   return (
@@ -65,17 +52,19 @@ export default async function CalendarPage({ params }: CalendarProps) {
         />
       </div>
 
+      {/* Poster Image for example */}
+      {calendar.poster && (
+        <div className="relative w-full h-[300px]">
+          <Image
+            src={calendar.poster.url}
+            alt={calendar.poster.originalFilename}
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
       <main className="flex-1 items-center justify-center py-4 px-1 md:px-10 bg-white text-black bg-[url('/images/fundo.png')] bg-cover bg-center">
-        {calendar.poster && (
-          <div className="relative w-full h-[300px] mb-4">
-            <Image
-              src={calendar.poster.url}
-              alt={calendar.poster.originalFilename}
-              fill
-              className="object-cover"
-            />
-          </div>
-        )}
         <Cards data={events} color={calendar.color} />
       </main>
 
@@ -83,3 +72,22 @@ export default async function CalendarPage({ params }: CalendarProps) {
     </div>
   );
 }
+
+/**
+ * Generates static parameters for dynamic routes.
+ * @returns An array of objects containing the slug for each calendar.
+ */
+export async function generateStaticParams() {
+  const slugs = await getCalendarsSlug();
+
+  return slugs.map((slug: string) => ({
+    slug,
+  }));
+}
+
+/**
+ * Type definition for the CalendarProps.
+ */
+type CalendarProps = {
+  params: Promise<{ slug: string }>;
+};
