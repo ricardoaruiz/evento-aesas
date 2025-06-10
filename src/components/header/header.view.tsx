@@ -8,16 +8,16 @@ export function Header({ title, subtitle, className }: BannerProps) {
   return (
     <header
       className={cn(
-        "bg-white flex flex-col md:flex-row justify-between gap-[10px] text-black py-2 px-10",
+        "bg-white flex flex-col md:flex-row justify-between gap-[10px] text-black py-3 px-10",
         "bg-[url('/images/fundo.png')] bg-cover bg-center",
         className
       )}
     >
-      <div className="flex flex-col items-center gap-2 md:items-start p-2">
+      <div className="flex flex-col items-center gap-4 md:items-start p-2">
         <h1 className="text-2xl md:text-3xl text-center md:text-left font-bold">
           {title}
         </h1>
-        <h2 className="text-base md:text-xl text-center md:text-left max-w-80">
+        <h2 className="text-xl md:text-2xl text-center md:text-left max-w-100 font-semibold">
           {subtitle}
         </h2>
       </div>
