@@ -15,5 +15,6 @@ export type CardProps = {
   tagText?: string;
   tagTextSize?: TagTextSize;
   tagVariant?: TagVariantColor;
+  color?: string;
   className?: string;
 };

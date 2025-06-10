@@ -7,6 +7,7 @@ import {
   type TagTextSize,
   type TagVariantColor,
 } from "@/components";
+import { cn } from "@/lib/utils";
 
 import { getCalendar, getCalendarsSlug } from "@/service";
 import { notFound } from "next/navigation";
@@ -52,20 +53,21 @@ export default async function CalendarPage({ params }: CalendarProps) {
         <Header
           title={calendar.header.firstLine}
           subtitle={calendar.header.secondLine}
-          className="text-black"
+          className={cn("text-black")}
         />
         <Banner
           title={calendar.banner.firstLine}
           subtitle={calendar.banner.secondLine}
-          className="text-white"
+          color={calendar.color}
+          className={cn("text-white")}
         />
       </div>
 
       <main className="flex-1 items-center justify-center py-4 px-1 md:px-10 bg-white text-black bg-[url('/images/fundo.png')] bg-cover bg-center">
-        <Cards data={events} />
+        <Cards data={events} color={calendar.color} />
       </main>
 
-      <Footer />
+      <Footer color={calendar.color} />
     </div>
   );
 }

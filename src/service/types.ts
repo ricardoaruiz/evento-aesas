@@ -22,6 +22,7 @@ export type Event = {
 };
 export type Calendar = {
   slug: string;
+  color: string;
   header: CalendarHeader;
   banner: CalendarBanner;
   events: Event[];

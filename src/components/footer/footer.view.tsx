@@ -1,9 +1,22 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import logoMinistery from "../../../public/images/logo_ministerio.svg";
 import logoSoldi from "../../../public/images/logo_soldi.svg";
-export function Footer() {
+import { FooterProps } from "./footer.types";
+export function Footer({ color, className, ...props }: FooterProps) {
+  const degradientColor = color
+    ? `bg-gradient-to-t from-${color}-500 to-${color}-800`
+    : "bg-gradient-to-t from-blue-500 to-blue-800";
+
   return (
-    <footer className="flex flex-col gap-10 lg:flex-row lg:gap-2 p-4 bg-gradient-to-t from-blue-500 to-blue-800 px-10">
+    <footer
+      className={cn(
+        "flex flex-col gap-10 lg:flex-row lg:gap-2 p-4",
+        degradientColor,
+        className
+      )}
+      {...props}
+    >
       <div className="flex flex-col gap-4 lg:gap-0 items-center md:items-start px-0 md:px-4">
         <p className="text-base font-bold flex-1 text-center lg:text-left">
           A realização dos cursos está sujeita a quantidade mínima de inscritos.

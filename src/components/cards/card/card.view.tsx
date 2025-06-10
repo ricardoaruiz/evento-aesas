@@ -16,8 +16,13 @@ export function Card({
   tagText,
   tagTextSize,
   tagVariant,
+  color,
   className,
 }: CardProps) {
+  const degradientColor = color
+    ? `bg-gradient-to-t from-${color}-500 to-${color}-800`
+    : "bg-gradient-to-t from-blue-500 to-blue-800";
+
   const contentTitleFontSize = useMemo(() => {
     switch (contentTileSize) {
       case "small":
@@ -45,7 +50,12 @@ export function Card({
 
       {/* Header */}
       <div className="flex flex-col">
-        <div className="flex justify-center items-center p-1 bg-blue-500 text-white rounded-t-md">
+        <div
+          className={cn(
+            "flex justify-center items-center p-1  text-white rounded-t-md",
+            degradientColor
+          )}
+        >
           <h3 className="text-2xl font-bold">{title}</h3>
         </div>
       </div>
@@ -82,7 +92,12 @@ export function Card({
       </div>
 
       {/* Footer */}
-      <div className="flex justify-center py-1 bg-blue-500 text-white rounded-b-md shadow-md text-lg">
+      <div
+        className={cn(
+          "flex justify-center py-1 bg-blue-500 text-white rounded-b-md shadow-md text-lg",
+          degradientColor
+        )}
+      >
         <p className="font-bold">{footerText}</p>
       </div>
     </div>

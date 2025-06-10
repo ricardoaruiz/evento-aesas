@@ -44,6 +44,7 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
 
   return {
     slug: calendar.slug,
+    color: calendar.color,
     header: {
       firstLine: calendar.header.firstLine,
       secondLine: calendar.header.secondLine,
