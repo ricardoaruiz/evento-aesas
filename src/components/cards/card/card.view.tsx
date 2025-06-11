@@ -1,4 +1,4 @@
-import { cn, getGradientColor } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useMemo } from "react";
 import { CardProps } from "./card.types";
 import { Tag } from "./tag/tag.view";
@@ -19,8 +19,6 @@ export function Card({
   color,
   className,
 }: CardProps) {
-  const gradientInternalColor = getGradientColor(color);
-
   const contentTitleFontSize = useMemo(() => {
     switch (contentTileSize) {
       case "small":
@@ -54,8 +52,9 @@ export function Card({
         <div
           className={cn(
             "flex items-center justify-center rounded-t-md p-1 text-white",
-            gradientInternalColor,
+            // gradientInternalColor,
           )}
+          style={{ backgroundColor: color }}
         >
           <h3 className="text-2xl font-bold">{title}</h3>
         </div>
@@ -96,8 +95,9 @@ export function Card({
       <div
         className={cn(
           "flex justify-center rounded-b-md bg-blue-500 py-1 text-lg text-white shadow-md",
-          gradientInternalColor,
+          // gradientInternalColor,
         )}
+        style={{ backgroundColor: color }}
       >
         <p className="font-bold">{footerText}</p>
       </div>

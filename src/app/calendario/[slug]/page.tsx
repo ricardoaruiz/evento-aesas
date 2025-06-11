@@ -47,7 +47,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
         <Banner.CalendarBanner
           title={calendar.banner.firstLine}
           subtitle={calendar.banner.secondLine}
-          color={calendar.color}
+          color={calendar.color.hex}
           className={cn("text-white")}
         />
       </div>
@@ -66,11 +66,11 @@ export default async function CalendarPage({ params }: CalendarProps) {
 
       <section className="flex-1 items-center justify-center bg-white bg-[url('/images/fundo.png')] bg-cover bg-center px-1 py-4 text-black md:px-10">
         <div className="container mx-auto max-w-[1000px]">
-          <Cards data={events} color={calendar.color} />
+          <Cards data={events} color={calendar.color.hex} />
         </div>
       </section>
 
-      <Footer.CalendarFooter color={calendar.color} />
+      <Footer.CalendarFooter color={calendar.color.hex} />
     </>
   );
 }

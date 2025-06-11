@@ -1,4 +1,4 @@
-import { cn, getGradientColor } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import logoMinistery from "../../../../public/images/logo_ministerio.svg";
 import logoSoldi from "../../../../public/images/logo_soldi.svg";
@@ -8,16 +8,14 @@ export function CalendarFooter({
   className,
   ...props
 }: CalendarFooterProps) {
-  const gradientInternalColor = getGradientColor(color);
-
   return (
     <footer
       className={cn(
         "flex flex-col gap-10 p-4 px-6 lg:flex-row lg:gap-2",
         "inset-shadow-sm inset-shadow-gray-500",
-        gradientInternalColor,
         className,
       )}
+      style={{ backgroundColor: color }}
       {...props}
     >
       <div className="flex flex-1 flex-col items-center gap-4 px-0 md:items-start md:px-4 lg:gap-0">

@@ -22,11 +22,15 @@ export type Event = {
 };
 export type Calendar = {
   slug: string;
-  color: string;
+  color: Color;
   header: CalendarHeader;
   banner: CalendarBanner;
   events: Event[];
   poster?: Image;
+};
+
+export type Color = {
+  hex: string;
 };
 
 export type Image = {
