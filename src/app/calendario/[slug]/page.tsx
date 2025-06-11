@@ -37,14 +37,14 @@ export default async function CalendarPage({ params }: CalendarProps) {
   }));
 
   return (
-    <div className="flex flex-col container max-w-[1000px] mx-auto min-h-dvh">
-      <div className="sticky top-0 bg-white z-50">
+    <>
+      <div className="relative bg-white md:sticky md:top-0 md:z-50">
         <Header
           title={calendar.header.firstLine}
           subtitle={calendar.header.secondLine}
           className={cn("text-black")}
         />
-        <Banner
+        <Banner.CalendarBanner
           title={calendar.banner.firstLine}
           subtitle={calendar.banner.secondLine}
           color={calendar.color}
@@ -54,7 +54,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
 
       {/* Poster Image for example */}
       {calendar.poster && (
-        <div className="relative w-full h-[300px]">
+        <div className="relative h-[300px] w-full">
           <Image
             src={calendar.poster.url}
             alt={calendar.poster.originalFilename}
@@ -64,12 +64,14 @@ export default async function CalendarPage({ params }: CalendarProps) {
         </div>
       )}
 
-      <main className="flex-1 items-center justify-center py-4 px-1 md:px-10 bg-white text-black bg-[url('/images/fundo.png')] bg-cover bg-center">
-        <Cards data={events} color={calendar.color} />
-      </main>
+      <section className="flex-1 items-center justify-center bg-white bg-[url('/images/fundo.png')] bg-cover bg-center px-1 py-4 text-black md:px-10">
+        <div className="container mx-auto max-w-[1000px]">
+          <Cards data={events} color={calendar.color} />
+        </div>
+      </section>
 
-      <Footer color={calendar.color} />
-    </div>
+      <Footer.CalendarFooter color={calendar.color} />
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
 
-export type FooterProps = ComponentProps<"footer"> & {
+export type EventFooterProps = ComponentProps<"footer"> & {
   color?: string;
 };

@@ -36,8 +36,8 @@ export function Card({
   return (
     <div
       className={cn(
-        "relative flex flex-col p-1 overflow-hidden bg-transparent",
-        className
+        "relative flex flex-col overflow-hidden bg-transparent p-1",
+        className,
       )}
     >
       {tagText && (
@@ -53,8 +53,8 @@ export function Card({
       <div className="flex flex-col">
         <div
           className={cn(
-            "flex justify-center items-center p-1  text-white rounded-t-md",
-            gradientInternalColor
+            "flex items-center justify-center rounded-t-md p-1 text-white",
+            gradientInternalColor,
           )}
         >
           <h3 className="text-2xl font-bold">{title}</h3>
@@ -62,16 +62,16 @@ export function Card({
       </div>
 
       {/* Body */}
-      <div className="flex flex-col gap-[10px] p-[10px] border-l border-l-blue-500 border-r border-r-blue-500 flex-1 bg-white">
+      <div className="flex flex-1 flex-col gap-[10px] border-r border-l border-r-blue-500 border-l-blue-500 bg-white p-[10px]">
         <p
           className={cn(
-            "font-bold text-center w-full px-2 mx-auto",
-            contentTitleFontSize
+            "mx-auto w-full px-2 text-center font-bold",
+            contentTitleFontSize,
           )}
         >
           {contentTitle}
         </p>
-        <p className="text-sm font-bold text-center">{contentDescription}</p>
+        <p className="text-center text-sm font-bold">{contentDescription}</p>
 
         <div className="flex flex-col items-center text-sm">
           <p className="text-center">
@@ -95,8 +95,8 @@ export function Card({
       {/* Footer */}
       <div
         className={cn(
-          "flex justify-center py-1 bg-blue-500 text-white rounded-b-md shadow-md text-lg",
-          gradientInternalColor
+          "flex justify-center rounded-b-md bg-blue-500 py-1 text-lg text-white shadow-md",
+          gradientInternalColor,
         )}
       >
         <p className="font-bold">{footerText}</p>

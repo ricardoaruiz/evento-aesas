@@ -31,11 +31,11 @@ export function Tag({
   return (
     <div className={cn("absolute", className)}>
       {/* Overlay for the tag text */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <span
           className={cn(
-            "relative text-black font-bold rotate-[48deg] line-clamp-1 -top-[14px] -right-1 pl-2 min-w-[100px] text-center",
-            tagVariantTextSize
+            "relative -top-[14px] -right-1 line-clamp-1 min-w-[100px] rotate-[48deg] pl-2 text-center font-bold text-black",
+            tagVariantTextSize,
           )}
         >
           {text}

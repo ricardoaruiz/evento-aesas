@@ -1,4 +1,4 @@
-export type BannerProps = {
+export type CalendarBannerProps = {
   title: string;
   subtitle: string;
   className?: string;

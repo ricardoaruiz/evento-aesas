@@ -1,16 +1,21 @@
 import { cn, getGradientColor } from "@/lib/utils";
-import { BannerProps } from "./banner.types";
+import { CalendarBannerProps } from "./calendar-banner.types";
 
-export function Banner({ title, subtitle, color, className }: BannerProps) {
+export function CalendarBanner({
+  title,
+  subtitle,
+  color,
+  className,
+}: CalendarBannerProps) {
   const gradientInternalColor = getGradientColor(color);
 
   return (
     <div
       className={cn(
         gradientInternalColor,
-        "p-4 flex flex-col gap-2 items-center text-xl md:text-2xl font-bold",
+        "flex flex-col items-center gap-2 p-4 text-xl font-bold md:text-2xl",
         "shadow-lg shadow-gray-500/50",
-        className
+        className,
       )}
     >
       <p className="text-center md:text-left">{title}</p>

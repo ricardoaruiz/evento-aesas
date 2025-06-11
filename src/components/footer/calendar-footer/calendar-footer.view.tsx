@@ -1,29 +1,33 @@
 import { cn, getGradientColor } from "@/lib/utils";
 import Image from "next/image";
-import logoMinistery from "../../../public/images/logo_ministerio.svg";
-import logoSoldi from "../../../public/images/logo_soldi.svg";
-import { FooterProps } from "./footer.types";
-export function Footer({ color, className, ...props }: FooterProps) {
+import logoMinistery from "../../../../public/images/logo_ministerio.svg";
+import logoSoldi from "../../../../public/images/logo_soldi.svg";
+import { CalendarFooterProps } from "./calendar-footer.types";
+export function CalendarFooter({
+  color,
+  className,
+  ...props
+}: CalendarFooterProps) {
   const gradientInternalColor = getGradientColor(color);
 
   return (
     <footer
       className={cn(
-        "flex flex-col gap-10 lg:flex-row lg:gap-2 p-4",
+        "flex flex-col gap-10 p-4 px-6 lg:flex-row lg:gap-2",
         "inset-shadow-sm inset-shadow-gray-500",
         gradientInternalColor,
-        className
+        className,
       )}
       {...props}
     >
-      <div className="flex flex-col gap-4 lg:gap-0 items-center md:items-start px-0 md:px-4">
-        <p className="text-base font-bold flex-1 text-center lg:text-left">
+      <div className="flex flex-1 flex-col items-center gap-4 px-0 md:items-start md:px-4 lg:gap-0">
+        <p className="flex-1 text-center text-lg font-bold md:text-xl lg:text-left lg:text-2xl">
           A realização dos cursos está sujeita a quantidade mínima de inscritos.
           Os valores serão divulgados no momento da abertura das inscrições.
         </p>
         <a
           href="https://www.aesas.com.br"
-          className="inline-block text-center lg:text-left text-xl font-bold flex-1 pt-4 w-full"
+          className="inline-block w-full flex-1 pt-4 text-center text-xl font-bold md:text-2xl lg:text-left"
           target="_blank"
           rel="noopener noreferrer"
           title="Aesas"
@@ -33,7 +37,7 @@ export function Footer({ color, className, ...props }: FooterProps) {
         </a>
       </div>
 
-      <div className="flex justify-center gap-[10px] flex-col lg:flex-row">
+      <div className="flex flex-col justify-center gap-4 md:gap-20 lg:flex-row">
         <div className="flex flex-col items-center gap-2">
           <p>Organização</p>
           <Image src={logoSoldi} alt="Logo Soldi" width={100} height={100} />

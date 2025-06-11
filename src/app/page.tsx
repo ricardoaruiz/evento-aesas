@@ -5,7 +5,7 @@ export default async function Home() {
   const slugs = await getCalendarsSlug();
 
   return (
-    <div className="flex flex-col container max-w-[1000px] mx-auto min-h-dvh">
+    <div className="container mx-auto flex min-h-dvh max-w-[1000px] flex-col">
       <ul className="flex gap-4">
         {slugs.map((slug) => (
           <li key={slug}>
@@ -18,6 +18,9 @@ export default async function Home() {
           </li>
         ))}
       </ul>
+      <Link href={`/evento/1`} className="text-blue-500 hover:underline">
+        Evento Teste
+      </Link>
     </div>
   );
 }
