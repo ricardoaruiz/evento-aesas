@@ -20,7 +20,7 @@ export default function EventoPage() {
         hours="08h às 12h"
         workload="16 horas"
         imageUrlLeft="/images/fundo1.png"
-        imageUrlRight="https://cdn.sanity.io/images/ejmsm84f/develop/c4f3651628407264ff12df30a9dc3ee8be50e004-500x500.png"
+        imageUrlRight="https://cdn.sanity.io/media-libraries/mlnWJIVznIMY/images/c4f3651628407264ff12df30a9dc3ee8be50e004-500x500.png"
       />
 
       <section className="flex flex-col items-center gap-8 bg-zinc-300 px-6 py-8">
