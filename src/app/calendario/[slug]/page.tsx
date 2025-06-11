@@ -87,6 +87,29 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: CalendarProps): Promise<{ title: string; description: string }> {
+  const { slug } = await params;
+
+  const title = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+  const calendar = await getCalendar(slug);
+
+  if (!calendar) {
+    return {
+      title: "Calendário não encontrado",
+      description: "O calendário solicitado não existe.",
+    };
+  }
+
+  return {
+    title,
+    description: `${calendar.header.firstLine} ${calendar.header.secondLine}`,
+  };
+}
+
 /**
  * Type definition for the CalendarProps.
  */

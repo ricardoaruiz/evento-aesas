@@ -14,10 +14,8 @@ export async function getCalendarsSlug(): Promise<string[]> {
     CALENDAR_SLUG_QUERY,
     {},
     {
-      next: {
-        revalidate: 30,
-      },
-    }
+      cache: "force-cache",
+    },
   );
 
   return data.map((item) => item.slug);
@@ -33,10 +31,8 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
     CALENDAR_QUERY,
     { slug },
     {
-      next: {
-        revalidate: 30,
-      },
-    }
+      cache: "force-cache",
+    },
   );
 
   const [calendar] = data;
