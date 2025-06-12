@@ -1,26 +1,42 @@
 import { Banner, Footer, Header } from "@/components";
 import { Avatar } from "@/components/avatar";
 import { cn } from "@/lib/utils";
+import { getEvent, getEventSlugs } from "@/service";
+import { notFound } from "next/navigation";
 
-export default function EventoPage() {
+export default async function EventoPage({ params }: EventProps) {
+  const { slug } = await params;
+
+  const event = await getEvent(slug);
+  const header = event?.calendar[0].header || {
+    firstLine: "",
+    secondLine: "",
+  };
+
+  if (!event) {
+    return notFound();
+  }
+
   return (
     <>
       <Header
-        title="ENCONTROS TÉCNICOS"
-        subtitle="DE GERENCIAMENTO DE ÁREAS CONTAMINADAS"
+        title={header.firstLine}
+        subtitle={header.secondLine}
         className={cn("text-black")}
       />
 
       <Banner.EventBanner
-        type="CURSO ONLINE"
-        name="CONTROLE DE QUALIDADE  NA AMOSTRAGEM E NO PROCESSO ANALÍTICO"
-        associatedPrice="R$ 567,00"
-        nonAssociatedPrice="R$ 567,00"
-        dates=" 26/05, 28/05, 02/06, 04/06"
-        hours="08h às 12h"
-        workload="16 horas"
-        imageUrlLeft="/images/fundo1.png"
-        imageUrlRight="https://cdn.sanity.io/media-libraries/mlnWJIVznIMY/images/c4f3651628407264ff12df30a9dc3ee8be50e004-500x500.png"
+        type={event.contentDescription}
+        name={event.contentTitle}
+        associatedPrice={event.associatedPrice}
+        nonAssociatedPrice={event.nonAssociatedPrice}
+        onlineDates={event.onlineDates}
+        onlineHours={event.onlineTime}
+        presencialDates={event.presencialDates}
+        presencialHours={event.presencialTime}
+        workload={event.workload}
+        imageUrlLeft={event.bannerLeftImage.url}
+        imageUrlRight={event.bannerRightImage.url}
       />
 
       <section className="flex flex-col items-center gap-8 bg-zinc-300 px-6 py-8">
@@ -40,3 +56,42 @@ export default function EventoPage() {
     </>
   );
 }
+
+export async function generateMetadata({
+  params,
+}: EventProps): Promise<{ title: string; description: string }> {
+  const { slug } = await params;
+
+  const title = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+  const event = await getEvent(slug);
+
+  if (!event) {
+    return {
+      title: "Evento não encontrado",
+      description: "O evento solicitado não existe.",
+    };
+  }
+
+  return {
+    title,
+    description: `${event.contentTitle}`,
+  };
+}
+
+export async function generateStaticParams() {
+  const slugs = await getEventSlugs();
+
+  return slugs.map((slug: string) => ({
+    slug,
+  }));
+}
+
+/**
+ * Type definition for the EventProps.
+ */
+type EventProps = {
+  params: Promise<{ slug: string }>;
+};

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { EventBannerProps } from "./event-banner.types";
 
 export function EventBanner({
@@ -5,12 +6,18 @@ export function EventBanner({
   name,
   associatedPrice,
   nonAssociatedPrice,
-  dates,
-  hours,
+  onlineDates,
+  onlineHours,
+  presencialDates,
+  presencialHours,
   workload,
   imageUrlRight,
   imageUrlLeft = "/images/fundo1.png", // Default background image
 }: EventBannerProps) {
+  const isOnline = type === "aulas on-line";
+  const isPresencial = type === "aulas presenciais";
+  const isHibrid = type === "aulas on-line e presenciais";
+
   return (
     <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
       {/* Description */}
@@ -33,20 +40,72 @@ export function EventBanner({
 
         {/* Pricing */}
         <div className="flex flex-1 flex-col justify-center gap-2">
-          <p className="text-xl">
-            <span className="font-bold">VALOR ASSOCIADO:</span>{" "}
-            {associatedPrice}
-          </p>
-          <p className="text-xl">
-            <span className="font-bold">VALOR NÃO ASSOCIADO:</span>{" "}
-            {nonAssociatedPrice}
-          </p>
-          <p className="text-xl">
-            <span className="font-bold">DATAS:</span> {dates}
-          </p>
-          <p className="text-xl">
-            <span className="font-bold">HORÁRIO:</span> {hours}
-          </p>
+          {associatedPrice && (
+            <p className="text-xl">
+              <span className="font-bold">VALOR ASSOCIADO:</span>{" "}
+              {associatedPrice}
+            </p>
+          )}
+
+          {nonAssociatedPrice && (
+            <p className="text-xl">
+              <span className="font-bold">VALOR NÃO ASSOCIADO:</span>{" "}
+              {nonAssociatedPrice}
+            </p>
+          )}
+
+          {/* Online */}
+          {(isOnline || isHibrid) && (
+            <div
+              className={cn({
+                "flex flex-col gap-2": !isHibrid,
+                "my-2": isHibrid,
+              })}
+            >
+              {isHibrid && <p className="text-xl font-bold">ON-LINE</p>}
+              <p
+                className={cn("text-xl", {
+                  "pl-2": isHibrid,
+                })}
+              >
+                <span className="font-bold">DATAS:</span> {onlineDates}
+              </p>
+              <p
+                className={cn("text-xl", {
+                  "pl-2": isHibrid,
+                })}
+              >
+                <span className="font-bold">HORÁRIO:</span> {onlineHours}
+              </p>
+            </div>
+          )}
+
+          {/* Presencial */}
+          {(isPresencial || isHibrid) && (
+            <div
+              className={cn({
+                "flex flex-col gap-2": !isHibrid,
+                "my-2": isHibrid,
+              })}
+            >
+              {isHibrid && <p className="text-xl font-bold">PRESENCIAL</p>}
+              <p
+                className={cn("text-xl", {
+                  "pl-2": isHibrid,
+                })}
+              >
+                <span className="font-bold">DATAS:</span> {presencialDates}
+              </p>
+              <p
+                className={cn("text-xl", {
+                  "pl-2": isHibrid,
+                })}
+              >
+                <span className="font-bold">HORÁRIO:</span> {presencialHours}
+              </p>
+            </div>
+          )}
+
           <p className="text-xl">
             <span className="font-bold">CARGA HORÁRIA:</span> {workload}
           </p>

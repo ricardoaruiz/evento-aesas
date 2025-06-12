@@ -3,6 +3,7 @@ import { TagTextSize, TagVariantColor } from "./tag/tag.types";
 export type ContentTypeSize = "small" | "medium" | "large";
 
 export type CardProps = {
+  slug: string;
   title: string;
   contentTitle: string;
   contentDescription: string;

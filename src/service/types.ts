@@ -2,11 +2,14 @@ export type CalendarHeader = {
   firstLine: string;
   secondLine: string;
 };
+
 export type CalendarBanner = {
   firstLine: string;
   secondLine: string;
 };
+
 export type Event = {
+  slug: string;
   title: string;
   contentTitle: string;
   contentDescription: string;
@@ -14,12 +17,21 @@ export type Event = {
   onlineDates: string;
   presencialTime: string;
   presencialDates: string;
+  workload: string;
   footerText: string;
-  contentTileSize: string;
-  tagText: string;
-  tagTextSize: string;
-  tagVariant: string;
+  associatedPrice?: string;
+  nonAssociatedPrice?: string;
+  contentTileSize?: string;
+  tagText?: string;
+  tagTextSize?: string;
+  tagVariant?: string;
+  calendar: {
+    header: CalendarHeader;
+  }[];
+  bannerLeftImage: Image;
+  bannerRightImage: Image;
 };
+
 export type Calendar = {
   slug: string;
   color: Color;

@@ -1,11 +1,13 @@
 export type EventBannerProps = {
   type: string;
   name: string;
-  associatedPrice: string;
-  nonAssociatedPrice: string;
-  dates: string;
-  hours: string;
+  onlineDates: string;
+  onlineHours: string;
+  presencialDates?: string;
+  presencialHours?: string;
   workload: string;
+  associatedPrice?: string;
+  nonAssociatedPrice?: string;
   imageUrlRight: string;
   imageUrlLeft?: string;
 };

@@ -22,6 +22,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
   }
 
   const events = calendar.events.map((event) => ({
+    slug: event.slug,
     title: event.title.toUpperCase(),
     contentTitle: event.contentTitle,
     contentDescription: event.contentDescription,
@@ -29,7 +30,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
     onlineDates: event.onlineDates,
     presencialTime: event.presencialTime,
     presencialDates: event.presencialDates,
-    footerText: event.footerText,
+    footerText: `${event.footerText} ${event.workload}`,
     contentTileSize: event.contentTileSize as ContentTypeSize,
     tagText: event.tagText,
     tagTextSize: event.tagTextSize as TagTextSize,

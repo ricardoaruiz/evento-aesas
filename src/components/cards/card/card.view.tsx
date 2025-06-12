@@ -61,7 +61,10 @@ export function Card({
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col gap-[10px] border-r border-l border-r-blue-500 border-l-blue-500 bg-white p-[10px]">
+      <div
+        className="flex flex-1 flex-col gap-[10px] border-r border-l bg-white p-[10px]"
+        style={{ borderColor: color }}
+      >
         <p
           className={cn(
             "mx-auto w-full px-2 text-center font-bold",

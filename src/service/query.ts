@@ -23,6 +23,7 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
     secondLine,
   },
   "events": events[]->{
+    "slug": title,
     "title": month,
     contentTitle,
     contentDescription,
@@ -31,9 +32,49 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
     presencialTime,
     presencialDates,
     footerText,
+    workload,
     contentTileSize,
     tagText,
     tagTextSize,
     tagVariant
   }
+}`;
+
+export const EVENTS_SLUG_QUERY = `*[_type == "event"]{
+  "slug": title
+}`;
+
+export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
+  "slug": title,
+  month,
+  contentTitle,
+  contentDescription,
+  associatedPrice,
+  nonAssociatedPrice,
+  onlineTime,
+  onlineDates,
+  presencialTime,
+  presencialDates,
+  workload,
+  footerText,
+  "calendar": *[_type == "calendar" && references(^._id)]{
+    header->{
+      firstLine,
+      secondLine
+    }    
+  },
+  "bannerLeftImage": bannerLeftImage.asset->{
+    uploadId,
+    mimeType,
+    originalFilename,
+    size,
+    url
+  },
+  "bannerRightImage": bannerRightImage.asset->{
+    uploadId,
+    mimeType,
+    originalFilename,
+    size,
+    url
+  },    
 }`;
