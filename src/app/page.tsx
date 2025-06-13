@@ -18,9 +18,6 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <Link href={`/evento/1`} className="text-blue-500 hover:underline">
-        Evento Teste
-      </Link>
     </div>
   );
 }
