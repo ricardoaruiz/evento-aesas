@@ -23,6 +23,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
 
   const events = calendar.events.map((event) => ({
     slug: event.slug,
+    isActive: event.isActive,
     title: event.title.toUpperCase(),
     contentTitle: event.contentTitle,
     contentDescription: event.contentDescription,

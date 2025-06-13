@@ -24,6 +24,7 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
   },
   "events": events[]->{
     "slug": title,
+    isActive,
     "title": month,
     contentTitle,
     contentDescription,
@@ -76,5 +77,17 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
     originalFilename,
     size,
     url
-  },    
+  },
+  "instructors": instructors[]->{
+    slug,
+    name,
+    organization,
+    "image": image.asset->{
+      uploadId,
+      mimeType,
+      originalFilename,
+      size,
+      url
+    }
+  }
 }`;

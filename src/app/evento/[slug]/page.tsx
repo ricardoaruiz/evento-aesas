@@ -39,18 +39,20 @@ export default async function EventoPage({ params }: EventProps) {
         imageUrlRight={event.bannerRightImage.url}
       />
 
-      <section className="flex flex-col items-center gap-8 bg-zinc-300 px-6 py-8">
-        <div className="flex max-w-[1000px] flex-wrap items-center justify-center gap-8">
-          {Array.from({ length: 7 }).map((_, idx) => (
-            <Avatar
-              key={idx}
-              name={`FULANO DE TAL ${idx + 1}`}
-              organization={`ORGANIZATION NAME ${idx + 1}`}
-              imageUrl="/images/avatar.jpeg"
-            />
-          ))}
-        </div>
-      </section>
+      {!!event.instructors && (
+        <section className="flex flex-col items-center gap-8 bg-zinc-300 px-6 py-8">
+          <div className="flex max-w-[1000px] flex-wrap items-center justify-center gap-8">
+            {event.instructors.map((instructor, idx) => (
+              <Avatar
+                key={idx}
+                name={instructor.name}
+                organization={instructor.organization}
+                imageUrl={instructor.image.url}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <Footer.EventFooter />
     </>

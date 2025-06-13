@@ -10,6 +10,7 @@ export type CalendarBanner = {
 
 export type Event = {
   slug: string;
+  isActive: boolean;
   title: string;
   contentTitle: string;
   contentDescription: string;
@@ -30,6 +31,7 @@ export type Event = {
   }[];
   bannerLeftImage: Image;
   bannerRightImage: Image;
+  instructors?: Person[];
 };
 
 export type Calendar = {
@@ -51,4 +53,11 @@ export type Image = {
   originalFilename: string;
   size: number;
   url: string;
+};
+
+export type Person = {
+  slug: string;
+  name: string;
+  organization: string;
+  image: Image;
 };

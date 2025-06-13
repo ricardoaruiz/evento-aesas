@@ -1,10 +1,13 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useMemo } from "react";
 import { CardProps } from "./card.types";
 import { Tag } from "./tag/tag.view";
 
 export function Card({
+  slug,
   title,
+  isActive,
   contentTitle,
   contentDescription,
   onlineTime,
@@ -73,9 +76,9 @@ export function Card({
         >
           {contentTitle}
         </p>
-        <p className="text-center text-sm font-bold">{contentDescription}</p>
+        <p className="text-center font-bold">{contentDescription}</p>
 
-        <div className="flex flex-col items-center text-sm">
+        <div className="flex flex-col items-center">
           <p className="text-center">
             <span className="mr-1 font-bold">ONLINE:</span>
             <span>{onlineTime}</span>
@@ -84,13 +87,26 @@ export function Card({
         </div>
 
         {presencialTime && presencialDates && (
-          <div className="flex flex-col items-center text-sm">
+          <div className="flex flex-col items-center">
             <p className="text-center">
               <span className="mr-1 font-bold">PRESENCIAL:</span>
               <span>{presencialTime}</span>
             </p>
             <p className="text-center">{presencialDates}</p>
           </div>
+        )}
+
+        {isActive && (
+          <Link
+            href={`/evento/${slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Link para o evento ${title}`}
+            className="mx-auto mt-auto w-30 cursor-pointer rounded-lg px-4 py-2 text-center font-bold text-white hover:opacity-80"
+            style={{ backgroundColor: color }}
+          >
+            Ver evento
+          </Link>
         )}
       </div>
 

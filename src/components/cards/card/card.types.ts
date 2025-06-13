@@ -4,6 +4,7 @@ export type ContentTypeSize = "small" | "medium" | "large";
 
 export type CardProps = {
   slug: string;
+  isActive: boolean;
   title: string;
   contentTitle: string;
   contentDescription: string;
