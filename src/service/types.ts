@@ -20,6 +20,8 @@ export type Event = {
   presencialDates: string;
   workload: string;
   footerText: string;
+  color?: Color;
+  bannerTextColor?: string;
   associatedPrice?: string;
   nonAssociatedPrice?: string;
   contentTileSize?: string;

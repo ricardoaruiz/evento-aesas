@@ -8,6 +8,7 @@ export type EventBannerProps = {
   workload: string;
   associatedPrice?: string;
   nonAssociatedPrice?: string;
-  imageUrlRight: string;
   imageUrlLeft?: string;
+  imageUrlRight?: string;
+  bannerTextColor?: string;
 };

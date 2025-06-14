@@ -35,8 +35,9 @@ export default async function EventoPage({ params }: EventProps) {
         presencialDates={event.presencialDates}
         presencialHours={event.presencialTime}
         workload={event.workload}
-        imageUrlLeft={event.bannerLeftImage.url}
+        imageUrlLeft={event.bannerLeftImage?.url}
         imageUrlRight={event.bannerRightImage.url}
+        bannerTextColor={event.bannerTextColor}
       />
 
       {!!event.instructors && (
@@ -54,7 +55,7 @@ export default async function EventoPage({ params }: EventProps) {
         </section>
       )}
 
-      <Footer.EventFooter />
+      <Footer.EventFooter color={event.color?.hex} />
     </>
   );
 }

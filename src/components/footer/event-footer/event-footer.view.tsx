@@ -2,17 +2,15 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { EventFooterProps } from "./event-footer.types";
 
-export function EventFooter({ color = "green" }: EventFooterProps) {
-  const internalColor = !!color ? `bg-${color}-900` : "bg-green-900";
-
+export function EventFooter({ color = "#003F0E" }: EventFooterProps) {
   return (
     <div
       className={cn(
         "flex flex-col items-center justify-center gap-7 p-8 text-xl lg:flex-row lg:gap-14",
-        internalColor,
       )}
+      style={{ backgroundColor: color }}
     >
-      <p>inscrição</p>
+      <p>Inscrição</p>
       <a
         href="https://www.aesas.com.br"
         target="_blank"
@@ -21,7 +19,7 @@ export function EventFooter({ color = "green" }: EventFooterProps) {
       >
         WWW.AESAS.COM.BR
       </a>
-      <p>organização</p>
+      <p>Organização</p>
       <Image
         src="/images/logo_soldi.svg"
         alt="Aesas Logo"
