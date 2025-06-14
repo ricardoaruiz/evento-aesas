@@ -1,8 +1,11 @@
+import { DEFAULT_COLORS } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { EventFooterProps } from "./event-footer.types";
 
-export function EventFooter({ color = "#003F0E" }: EventFooterProps) {
+export function EventFooter({
+  color = DEFAULT_COLORS.event,
+}: EventFooterProps) {
   return (
     <div
       className={cn(

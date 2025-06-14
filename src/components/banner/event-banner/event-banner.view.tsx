@@ -23,13 +23,12 @@ export function EventBanner({
     <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
       {/* Left Side */}
       <div
-        className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6"
+        className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6 drop-shadow-2xl"
         style={{
           backgroundImage: `url('${imageUrlLeft}')`,
           color: bannerTextColor,
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-20" />
         <div className="pt-4">
           <h2 className="text-center text-2xl tracking-widest md:text-left md:text-4xl">
             {type}

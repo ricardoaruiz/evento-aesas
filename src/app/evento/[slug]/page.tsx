@@ -1,5 +1,6 @@
 import { Banner, Footer, Header } from "@/components";
 import { Avatar } from "@/components/avatar";
+import { DEFAULT_COLORS } from "@/constants";
 import { cn } from "@/lib/utils";
 import { getEvent, getEventSlugs } from "@/service";
 import { notFound } from "next/navigation";
@@ -22,6 +23,7 @@ export default async function EventoPage({ params }: EventProps) {
       <Header
         title={header.firstLine}
         subtitle={header.secondLine}
+        color={event.color?.hex ?? DEFAULT_COLORS.event}
         className={cn("text-black")}
       />
 

@@ -4,7 +4,7 @@ import logoAesas from "../../../public/images/logo-aesas.svg";
 import logoSenac from "../../../public/images/logo-senac.svg";
 import { BannerProps } from "./header.types";
 
-export function Header({ title, subtitle, className }: BannerProps) {
+export function Header({ title, subtitle, color, className }: BannerProps) {
   return (
     <header
       className={cn(
@@ -12,6 +12,7 @@ export function Header({ title, subtitle, className }: BannerProps) {
         "bg-[url('/images/fundo.png')] bg-cover bg-center",
         className,
       )}
+      style={{ color }}
     >
       <div className="flex flex-col items-center gap-4 p-2 md:items-start">
         <h1 className="text-center text-4xl font-bold md:text-left md:text-5xl lg:text-6xl">
