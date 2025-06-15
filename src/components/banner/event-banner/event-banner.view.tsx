@@ -21,7 +21,7 @@ export function EventBanner({
   const isHibrid = type === "aulas on-line e presenciais";
 
   return (
-    <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
+    <div className="flex flex-col drop-shadow-xl lg:flex-row">
       {/* Left Side */}
       <div
         className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6"
