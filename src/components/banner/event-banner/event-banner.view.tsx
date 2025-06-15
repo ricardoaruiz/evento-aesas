@@ -1,3 +1,4 @@
+import { DEFAULT_COLORS } from "@/constants";
 import { cn } from "@/lib/utils";
 import { EventBannerProps } from "./event-banner.types";
 
@@ -11,9 +12,9 @@ export function EventBanner({
   presencialDates,
   presencialHours,
   workload,
-  imageUrlLeft = "/images/fundo1.png", // Default background image
-  imageUrlRight = "/images/womman.png", // Default background image
-  bannerTextColor = "#FFFFFF",
+  imageUrlLeft = "/images/event-banner-default-bg.png",
+  imageUrlRight = "/images/event-banner-default-bg.png",
+  bannerTextColor,
 }: EventBannerProps) {
   const isOnline = type === "aulas on-line";
   const isPresencial = type === "aulas presenciais";
@@ -23,10 +24,10 @@ export function EventBanner({
     <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
       {/* Left Side */}
       <div
-        className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6 drop-shadow-2xl"
+        className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6"
         style={{
           backgroundImage: `url('${imageUrlLeft}')`,
-          color: bannerTextColor,
+          color: bannerTextColor ?? DEFAULT_COLORS.event.banner.text,
         }}
       >
         <div className="pt-4">
@@ -119,7 +120,9 @@ export function EventBanner({
       {/* Right Side */}
       <div
         className={`min-h-[650px] flex-1 bg-cover bg-center`}
-        style={{ backgroundImage: `url('${imageUrlRight}')` }}
+        style={{
+          backgroundImage: `url('${imageUrlRight}')`,
+        }}
       />
     </div>
   );

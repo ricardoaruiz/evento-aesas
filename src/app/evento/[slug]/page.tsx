@@ -23,7 +23,7 @@ export default async function EventoPage({ params }: EventProps) {
       <Header
         title={header.firstLine}
         subtitle={header.secondLine}
-        color={event.color?.hex ?? DEFAULT_COLORS.event}
+        color={event.bannerTextColor ?? DEFAULT_COLORS.event.banner.text}
         className={cn("text-black")}
       />
 
@@ -38,7 +38,7 @@ export default async function EventoPage({ params }: EventProps) {
         presencialHours={event.presencialTime}
         workload={event.workload}
         imageUrlLeft={event.bannerLeftImage?.url}
-        imageUrlRight={event.bannerRightImage.url}
+        imageUrlRight={event.bannerRightImage?.url}
         bannerTextColor={event.bannerTextColor}
       />
 
@@ -57,7 +57,10 @@ export default async function EventoPage({ params }: EventProps) {
         </section>
       )}
 
-      <Footer.EventFooter color={event.color?.hex} />
+      <Footer.EventFooter
+        color={event.color?.hex}
+        textColor={event.footerTextColor}
+      />
     </>
   );
 }

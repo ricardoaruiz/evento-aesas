@@ -21,7 +21,9 @@ export type Event = {
   workload: string;
   footerText: string;
   color?: Color;
+  headerTextColor?: string;
   bannerTextColor?: string;
+  footerTextColor?: string;
   associatedPrice?: string;
   nonAssociatedPrice?: string;
   contentTileSize?: string;

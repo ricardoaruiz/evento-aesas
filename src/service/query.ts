@@ -61,7 +61,9 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
   presencialDates,
   workload,
   footerText,
+  headerTextColor,
   bannerTextColor,
+  footerTextColor,
   "calendar": *[_type == "calendar" && references(^._id)]{
     header->{
       firstLine,

@@ -1,3 +1,14 @@
 export const DEFAULT_COLORS = {
-  event: "#003F0E",
+  event: {
+    header: {
+      text: "#000",
+    },
+    banner: {
+      text: "#000",
+    },
+    footer: {
+      background: "#FFF",
+      text: "#000",
+    },
+  },
 };
