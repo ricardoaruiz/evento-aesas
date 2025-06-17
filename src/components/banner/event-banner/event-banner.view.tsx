@@ -119,9 +119,11 @@ export function EventBanner({
 
       {/* Right Side */}
       <div
-        className={`min-h-[650px] flex-1 bg-cover bg-center`}
+        className={`min-h-[650px] flex-1`}
         style={{
           backgroundImage: `url('${imageUrlRight}')`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}
       />
     </div>

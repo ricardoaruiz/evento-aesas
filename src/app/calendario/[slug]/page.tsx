@@ -10,7 +10,6 @@ import {
 import { cn } from "@/lib/utils";
 
 import { getCalendar, getCalendarsSlug } from "@/service";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export default async function CalendarPage({ params }: CalendarProps) {
@@ -40,38 +39,22 @@ export default async function CalendarPage({ params }: CalendarProps) {
 
   return (
     <>
-      <div className="relative bg-white md:sticky md:top-0 md:z-50">
-        <Header
-          title={calendar.header.firstLine}
-          subtitle={calendar.header.secondLine}
-          className={cn("text-black")}
-        />
-        <Banner.CalendarBanner
-          title={calendar.banner.firstLine}
-          subtitle={calendar.banner.secondLine}
-          color={calendar.color.hex}
-          className={cn("text-white")}
-        />
-      </div>
-
-      {/* Poster Image for example */}
-      {calendar.poster && (
-        <div className="relative h-[300px] w-full">
-          <Image
-            src={calendar.poster.url}
-            alt={calendar.poster.originalFilename}
-            fill
-            className="object-cover"
-          />
-        </div>
-      )}
-
+      <Header
+        title={calendar.header.firstLine}
+        subtitle={calendar.header.secondLine}
+        className={cn("text-black")}
+      />
+      <Banner.CalendarBanner
+        title={calendar.banner.firstLine}
+        subtitle={calendar.banner.secondLine}
+        color={calendar.color.hex}
+        className={cn("text-white")}
+      />
       <section className="flex-1 items-center justify-center bg-white bg-[url('/images/fundo.png')] bg-cover bg-center px-1 py-4 text-black md:px-10">
         <div className="container mx-auto max-w-[1000px]">
           <Cards data={events} color={calendar.color.hex} />
         </div>
       </section>
-
       <Footer.CalendarFooter color={calendar.color.hex} />
     </>
   );
