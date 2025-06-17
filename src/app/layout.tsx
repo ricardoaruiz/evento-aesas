@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Arimo } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
+const arimo = Arimo({
   subsets: ["latin"],
+  variable: "--font-arimo",
+});
+
+const biryani = localFont({
+  src: "../../public/fonts/Biryani.ttf",
+  variable: "--font-biryani",
+});
+
+const glacial = localFont({
+  src: "../../public/fonts/GlacialIndifference.otf",
+  variable: "--font-glacial",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${nunito.variable} antialiased`}>
+      <body
+        className={`${glacial.variable} ${biryani.variable} ${arimo.variable} antialiased`}
+      >
         <div className="mx-auto flex min-h-dvh w-full flex-col 2xl:max-w-[1440px]">
           {children}
         </div>
