@@ -1,5 +1,6 @@
 import { DEFAULT_COLORS } from "@/constants";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { EventBannerProps } from "./event-banner.types";
 
 export function EventBanner({
@@ -118,14 +119,14 @@ export function EventBanner({
       </div>
 
       {/* Right Side */}
-      <div
-        className={`min-h-[650px] flex-1`}
-        style={{
-          backgroundImage: `url('${imageUrlRight}')`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className={`relative min-h-[600px] flex-1`}>
+        <Image
+          src={imageUrlRight}
+          alt="Event Banner Right"
+          fill
+          className="h-full w-full object-cover"
+        />
+      </div>
     </div>
   );
 }
