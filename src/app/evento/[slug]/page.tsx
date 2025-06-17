@@ -43,7 +43,10 @@ export default async function EventoPage({ params }: EventProps) {
       />
 
       {!!event.instructors && (
-        <section className="flex flex-col items-center gap-8 bg-zinc-300 px-6 py-8">
+        <section className="flex flex-col items-center gap-8 bg-zinc-100 px-6 py-8">
+          <h2 className="font-glacial self-start text-3xl text-black">
+            INSTRUTORES
+          </h2>
           <div className="flex max-w-[1000px] flex-wrap items-center justify-center gap-8">
             {event.instructors.map((instructor, idx) => (
               <Avatar
