@@ -3,7 +3,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { EventFooterProps } from "./event-footer.types";
 
-export function EventFooter({ color, textColor }: EventFooterProps) {
+export function EventFooter({
+  color,
+  textColor,
+  registrationLink,
+}: EventFooterProps) {
   return (
     <div
       className={cn(
@@ -16,7 +20,7 @@ export function EventFooter({ color, textColor }: EventFooterProps) {
     >
       <p>Inscrição</p>
       <a
-        href="https://www.aesas.com.br"
+        href={registrationLink ?? "https://www.aesas.com.br"}
         target="_blank"
         rel="noopener noreferrer"
         className="text-4xl font-bold transition-colors duration-300 hover:text-zinc-400"

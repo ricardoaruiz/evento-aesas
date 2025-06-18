@@ -20,6 +20,7 @@ export type Event = {
   presencialDates: string;
   workload: string;
   footerText: string;
+  registrationLink?: string;
   color?: Color;
   headerTextColor?: string;
   bannerTextColor?: string;

@@ -50,6 +50,7 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
   color {
     hex
   },
+  registrationLink,
   month,
   contentTitle,
   contentDescription,

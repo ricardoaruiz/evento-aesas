@@ -63,6 +63,7 @@ export default async function EventoPage({ params }: EventProps) {
       <Footer.EventFooter
         color={event.color?.hex}
         textColor={event.footerTextColor}
+        registrationLink={event.registrationLink}
       />
     </>
   );
