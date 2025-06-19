@@ -124,7 +124,7 @@ export function EventBanner({
           src={imageUrlRight}
           alt="Event Banner Right"
           fill
-          className="h-full w-full object-cover"
+          className="object-fit h-full w-full sm:object-cover"
         />
       </div>
     </div>
