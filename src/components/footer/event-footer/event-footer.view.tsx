@@ -36,15 +36,17 @@ export function EventFooter({
       )}
 
       {hasSomeRegistrationLinks && (
-        <div className="flex flex-col gap-10 md:gap-2">
+        <div className="flex flex-col gap-10 lg:gap-2">
           {registrationLink && (
-            <div className="flex flex-col items-center gap-2 md:flex-row">
-              <p className="text-2xl font-bold">Associados e não associados:</p>
+            <div className="flex flex-col items-center gap-2 lg:flex-row lg:justify-start">
+              <p className="text-center text-xl font-bold md:text-left md:text-2xl">
+                Associados e não associados:
+              </p>
               <a
                 href={registrationLink ?? defaultRegistrationLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl transition-colors duration-300 hover:text-zinc-400"
+                className="text-base transition-colors duration-300 hover:text-zinc-300 md:text-xl"
               >
                 clique aqui para se inscrever
               </a>
@@ -52,15 +54,17 @@ export function EventFooter({
           )}
 
           {registrationLinkGovernmentEmployee && (
-            <div className="flex flex-col items-center gap-2 md:flex-row">
-              <p className="text-2xl font-bold">Funcionários públicos:</p>
+            <div className="flex flex-col items-center gap-2 lg:flex-row lg:justify-start">
+              <p className="text-center text-xl font-bold md:text-2xl">
+                Servidores de Órgãos Ambientais:
+              </p>
               <a
                 href={
                   registrationLinkGovernmentEmployee ?? defaultRegistrationLink
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xl transition-colors duration-300 hover:text-zinc-400"
+                className="text-base transition-colors duration-300 hover:text-zinc-300 md:text-xl"
               >
                 clique aqui para pré-inscrição
               </a>
