@@ -51,6 +51,7 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
     hex
   },
   registrationLink,
+  registrationLinkGovernmentEmployee,
   month,
   contentTitle,
   contentDescription,

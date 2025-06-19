@@ -21,6 +21,7 @@ export type Event = {
   workload: string;
   footerText: string;
   registrationLink?: string;
+  registrationLinkGovernmentEmployee?: string;
   color?: Color;
   headerTextColor?: string;
   bannerTextColor?: string;

@@ -4,4 +4,5 @@ export type EventFooterProps = ComponentProps<"footer"> & {
   color?: string;
   textColor?: string;
   registrationLink?: string;
+  registrationLinkGovernmentEmployee?: string;
 };
