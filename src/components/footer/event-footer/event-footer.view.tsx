@@ -9,6 +9,9 @@ export function EventFooter({
   registrationLink,
   registrationLinkGovernmentEmployee,
 }: EventFooterProps) {
+  const hasSomeRegistrationLinks =
+    registrationLink || registrationLinkGovernmentEmployee;
+  const defaultRegistrationLink = "https://www.aesas.com.br";
   return (
     <footer
       className={cn(
@@ -19,32 +22,52 @@ export function EventFooter({
         color: textColor ?? DEFAULT_COLORS.event.footer.text,
       }}
     >
-      <div className="flex flex-col gap-10 md:gap-2">
-        <div className="flex flex-col items-center gap-2 md:flex-row">
-          <p className="text-2xl font-bold">Associados e não associados:</p>
+      {!hasSomeRegistrationLinks && (
+        <>
           <a
-            href={registrationLink ?? "https://www.aesas.com.br"}
+            href={registrationLink ?? defaultRegistrationLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl transition-colors duration-300 hover:text-zinc-400"
+            className="text-4xl font-bold transition-colors duration-300 hover:text-zinc-400"
           >
-            clique aqui para se inscrever
+            WWW.AESAS.COM.BR
           </a>
+        </>
+      )}
+
+      {hasSomeRegistrationLinks && (
+        <div className="flex flex-col gap-10 md:gap-2">
+          {registrationLink && (
+            <div className="flex flex-col items-center gap-2 md:flex-row">
+              <p className="text-2xl font-bold">Associados e não associados:</p>
+              <a
+                href={registrationLink ?? defaultRegistrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl transition-colors duration-300 hover:text-zinc-400"
+              >
+                clique aqui para se inscrever
+              </a>
+            </div>
+          )}
+
+          {registrationLinkGovernmentEmployee && (
+            <div className="flex flex-col items-center gap-2 md:flex-row">
+              <p className="text-2xl font-bold">Funcionários públicos:</p>
+              <a
+                href={
+                  registrationLinkGovernmentEmployee ?? defaultRegistrationLink
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl transition-colors duration-300 hover:text-zinc-400"
+              >
+                clique aqui para pré-inscrição
+              </a>
+            </div>
+          )}
         </div>
-        <div className="flex flex-col items-center gap-2 md:flex-row">
-          <p className="text-2xl font-bold">Funcionários públicos:</p>
-          <a
-            href={
-              registrationLinkGovernmentEmployee ?? "https://www.aesas.com.br"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xl transition-colors duration-300 hover:text-zinc-400"
-          >
-            clique aqui para pré-inscrição
-          </a>
-        </div>
-      </div>
+      )}
 
       <div>
         <p>Organização</p>
