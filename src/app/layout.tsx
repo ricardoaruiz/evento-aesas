@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${glacial.variable} ${biryani.variable} ${arimo.variable} antialiased`}
       >
-        <div className="mx-auto flex min-h-dvh w-full flex-col 2xl:max-w-[1440px]">
+        <div className="mx-auto flex min-h-dvh w-full flex-col 2xl:max-w-[1200px]">
           {children}
         </div>
       </body>
