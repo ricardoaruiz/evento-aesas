@@ -20,7 +20,7 @@ export function Header({ title, subtitle, color, className }: BannerProps) {
         </h1>
 
         <div className="flex w-full flex-col justify-between gap-10 md:flex-row md:gap-0">
-          <h2 className="font-glacial max-w-[700px] self-start text-center text-3xl/relaxed md:text-start lg:text-5xl/relaxed">
+          <h2 className="font-glacial max-w-[700px] self-start text-center text-3xl/snug md:text-start lg:text-5xl/snug">
             {subtitle}
           </h2>
           <div className="flex flex-col items-center justify-end gap-[10px]">
