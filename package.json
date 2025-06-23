@@ -7,7 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "prepare": "husky install",
+    "test": "echo running tests"
+  },
+  "lint-staged": {
+    "src/**/*.+(js|jsx|ts|tsx|md|mdx|yml|yaml)": [
+      "npm run lint:fix"
+    ]
+  },
+    "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   },
   "dependencies": {
     "@sanity/image-url": "^1.1.0",
@@ -23,14 +35,20 @@
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3.3.1",
     "@rocketseat/eslint-config": "^2.2.2",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^22.15.30",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
+    "commitizen": "^4.3.1",
     "eslint": "^9.29.0",
     "eslint-config-next": "15.3.3",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
     "tailwindcss": "^4.1.8",
