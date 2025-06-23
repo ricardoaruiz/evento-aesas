@@ -1,8 +1,9 @@
-import { getCalendarsSlug } from "@/service";
-import Link from "next/link";
+import Link from 'next/link'
+
+import { getCalendarsSlug } from '@/service'
 
 export default async function Home() {
-  const slugs = await getCalendarsSlug();
+  const slugs = await getCalendarsSlug()
 
   return (
     <div className="container mx-auto flex min-h-dvh max-w-[1000px] flex-col">
@@ -19,5 +20,5 @@ export default async function Home() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

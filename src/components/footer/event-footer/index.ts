@@ -1,1 +1,1 @@
-export { EventFooter } from "./event-footer.view";
+export { EventFooter } from './event-footer.view'

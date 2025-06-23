@@ -1,35 +1,36 @@
-import type { Metadata } from "next";
-import { Arimo } from "next/font/google";
-import localFont from "next/font/local";
-import "./globals.css";
+import './globals.css'
+
+import type { Metadata } from 'next'
+import { Arimo } from 'next/font/google'
+import localFont from 'next/font/local'
 
 const arimo = Arimo({
-  subsets: ["latin"],
-  variable: "--font-arimo",
-});
+  subsets: ['latin'],
+  variable: '--font-arimo',
+})
 
 const biryani = localFont({
-  src: "../../public/fonts/Biryani.ttf",
-  variable: "--font-biryani",
-});
+  src: '../../public/fonts/Biryani.ttf',
+  variable: '--font-biryani',
+})
 
 const glacial = localFont({
-  src: "../../public/fonts/GlacialIndifference.otf",
-  variable: "--font-glacial",
-});
+  src: '../../public/fonts/GlacialIndifference.otf',
+  variable: '--font-glacial',
+})
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Eventos Aesas",
-    default: "Eventos Aesas",
+    template: '%s | Eventos Aesas',
+    default: 'Eventos Aesas',
   },
-  description: "Agenda de eventos da Aesas",
-};
+  description: 'Agenda de eventos da Aesas',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className="dark">
@@ -41,5 +42,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

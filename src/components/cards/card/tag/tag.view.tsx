@@ -1,40 +1,41 @@
-import { cn } from "@/lib/utils";
-import { TagDegradationColors, TagProps, TagVariantColor } from "./tag.types";
+import { cn } from '@/lib/utils'
+
+import { TagDegradationColors, TagProps, TagVariantColor } from './tag.types'
 
 export function Tag({
   text,
-  textSize = "medium",
-  variant = "gold",
+  textSize = 'medium',
+  variant = 'gold',
   className,
   ...props
 }: TagProps) {
   const tagVariantColors: Record<TagVariantColor, TagDegradationColors> = {
     gold: {
-      color: "#D3B22E",
+      color: '#D3B22E',
     },
     silver: {
-      color: "#C0C0C0",
+      color: '#C0C0C0',
     },
     bronze: {
-      color: "#CD7F32",
+      color: '#CD7F32',
     },
-  };
+  }
 
-  const tagVariantColor = tagVariantColors[variant as TagVariantColor];
+  const tagVariantColor = tagVariantColors[variant as TagVariantColor]
 
   const tagVariantTextSize = {
-    "text-[8px]": textSize === "small",
-    "text-[10px]": textSize === "medium",
-    "text-[12px]": textSize === "large",
-  };
+    'text-[8px]': textSize === 'small',
+    'text-[10px]': textSize === 'medium',
+    'text-[12px]': textSize === 'large',
+  }
 
   return (
-    <div className={cn("absolute", className)}>
+    <div className={cn('absolute', className)}>
       {/* Overlay for the tag text */}
       <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
         <span
           className={cn(
-            "relative -top-[14px] -right-1 line-clamp-1 min-w-[100px] rotate-[48deg] pl-2 text-center font-bold text-black",
+            'relative -top-[14px] -right-1 line-clamp-1 min-w-[100px] rotate-[48deg] pl-2 text-center font-bold text-black',
             tagVariantTextSize,
           )}
         >
@@ -216,5 +217,5 @@ export function Tag({
         </defs>
       </svg> */}
     </div>
-  );
+  )
 }

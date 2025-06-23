@@ -1,1 +1,1 @@
-export { CalendarBanner } from "./calendar-banner.view";
+export { CalendarBanner } from './calendar-banner.view'

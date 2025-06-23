@@ -1,5 +1,5 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react'
 
-export type CalendarFooterProps = ComponentProps<"footer"> & {
-  color?: string;
-};
+export type CalendarFooterProps = ComponentProps<'footer'> & {
+  color?: string
+}

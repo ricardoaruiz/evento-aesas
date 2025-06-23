@@ -1,7 +1,9 @@
-import { DEFAULT_COLORS } from "@/constants";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { EventBannerProps } from "./event-banner.types";
+import Image from 'next/image'
+
+import { DEFAULT_COLORS } from '@/constants'
+import { cn } from '@/lib/utils'
+
+import { EventBannerProps } from './event-banner.types'
 
 export function EventBanner({
   type,
@@ -13,13 +15,13 @@ export function EventBanner({
   presencialDates,
   presencialHours,
   workload,
-  imageUrlLeft = "/images/event-banner-default-bg.png",
-  imageUrlRight = "/images/event-banner-default-bg.png",
+  imageUrlLeft = '/images/event-banner-default-bg.png',
+  imageUrlRight = '/images/event-banner-default-bg.png',
   bannerTextColor,
 }: EventBannerProps) {
-  const isOnline = type === "aulas on-line";
-  const isPresencial = type === "aulas presenciais";
-  const isHibrid = type === "aulas on-line e presenciais";
+  const isOnline = type === 'aulas on-line'
+  const isPresencial = type === 'aulas presenciais'
+  const isHibrid = type === 'aulas on-line e presenciais'
 
   return (
     <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
@@ -48,14 +50,14 @@ export function EventBanner({
         <div className="flex flex-1 flex-col justify-center gap-2">
           {associatedPrice && (
             <p className="text-xl">
-              <span className="font-bold">VALOR ASSOCIADO:</span>{" "}
+              <span className="font-bold">VALOR ASSOCIADO:</span>{' '}
               {associatedPrice}
             </p>
           )}
 
           {nonAssociatedPrice && (
             <p className="text-xl">
-              <span className="font-bold">VALOR NÃO ASSOCIADO:</span>{" "}
+              <span className="font-bold">VALOR NÃO ASSOCIADO:</span>{' '}
               {nonAssociatedPrice}
             </p>
           )}
@@ -64,21 +66,21 @@ export function EventBanner({
           {(isOnline || isHibrid) && (
             <div
               className={cn({
-                "flex flex-col gap-2": !isHibrid,
-                "my-2": isHibrid,
+                'flex flex-col gap-2': !isHibrid,
+                'my-2': isHibrid,
               })}
             >
               {isHibrid && <p className="text-xl font-bold">ON-LINE</p>}
               <p
-                className={cn("text-xl", {
-                  "pl-2": isHibrid,
+                className={cn('text-xl', {
+                  'pl-2': isHibrid,
                 })}
               >
                 <span className="font-bold">DATAS:</span> {onlineDates}
               </p>
               <p
-                className={cn("text-xl", {
-                  "pl-2": isHibrid,
+                className={cn('text-xl', {
+                  'pl-2': isHibrid,
                 })}
               >
                 <span className="font-bold">HORÁRIO:</span> {onlineHours}
@@ -90,21 +92,21 @@ export function EventBanner({
           {(isPresencial || isHibrid) && (
             <div
               className={cn({
-                "flex flex-col gap-2": !isHibrid,
-                "my-2": isHibrid,
+                'flex flex-col gap-2': !isHibrid,
+                'my-2': isHibrid,
               })}
             >
               {isHibrid && <p className="text-xl font-bold">PRESENCIAL</p>}
               <p
-                className={cn("text-xl", {
-                  "pl-2": isHibrid,
+                className={cn('text-xl', {
+                  'pl-2': isHibrid,
                 })}
               >
                 <span className="font-bold">DATAS:</span> {presencialDates}
               </p>
               <p
-                className={cn("text-xl", {
-                  "pl-2": isHibrid,
+                className={cn('text-xl', {
+                  'pl-2': isHibrid,
                 })}
               >
                 <span className="font-bold">HORÁRIO:</span> {presencialHours}
@@ -128,5 +130,5 @@ export function EventBanner({
         />
       </div>
     </div>
-  );
+  )
 }

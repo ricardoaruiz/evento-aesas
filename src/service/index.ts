@@ -1,14 +1,16 @@
-"use server";
+'use server'
 
-import { client } from "@/lib/sanity-client";
-import { SanityDocument } from "next-sanity";
+import { SanityDocument } from 'next-sanity'
+
+import { client } from '@/lib/sanity-client'
+
 import {
   CALENDAR_QUERY,
   CALENDAR_SLUG_QUERY,
   EVENTS_QUERY,
   EVENTS_SLUG_QUERY,
-} from "./query";
-import { Calendar, Event } from "./types";
+} from './query'
+import { Calendar, Event } from './types'
 
 /**
  * Fetches the slugs of all calendars.
@@ -19,11 +21,11 @@ export async function getCalendarsSlug(): Promise<string[]> {
     CALENDAR_SLUG_QUERY,
     {},
     {
-      cache: "force-cache",
+      cache: 'force-cache',
     },
-  );
+  )
 
-  return data.map((item) => item.slug);
+  return data.map((item) => item.slug)
 }
 
 /**
@@ -36,18 +38,18 @@ export async function getCalendar(slug: string): Promise<Calendar | null> {
     CALENDAR_QUERY,
     { slug },
     {
-      cache: "force-cache",
+      cache: 'force-cache',
     },
-  );
+  )
 
-  const [calendar] = data;
+  const [calendar] = data
 
   return !calendar
     ? null
     : {
         ...calendar,
         events: calendar.events ?? [],
-      };
+      }
 }
 
 /**
@@ -59,11 +61,11 @@ export async function getEventSlugs(): Promise<string[]> {
     EVENTS_SLUG_QUERY,
     {},
     {
-      cache: "force-cache",
+      cache: 'force-cache',
     },
-  );
+  )
 
-  return data.map((item) => item.slug);
+  return data.map((item) => item.slug)
 }
 
 /**
@@ -76,11 +78,11 @@ export async function getEvent(slug: string): Promise<Event | null> {
     EVENTS_QUERY,
     { slug },
     {
-      cache: "force-cache",
+      cache: 'force-cache',
     },
-  );
+  )
 
-  const [event] = data;
+  const [event] = data
 
-  return event ?? null;
+  return event ?? null
 }

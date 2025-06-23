@@ -1,1 +1,1 @@
-export { EventBanner } from "./event-banner.view";
+export { EventBanner } from './event-banner.view'

@@ -1,21 +1,22 @@
-import { Banner, Footer, Header } from "@/components";
-import { Avatar } from "@/components/avatar";
-import { DEFAULT_COLORS } from "@/constants";
-import { cn } from "@/lib/utils";
-import { getEvent, getEventSlugs } from "@/service";
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation'
+
+import { Banner, Footer, Header } from '@/components'
+import { Avatar } from '@/components/avatar'
+import { DEFAULT_COLORS } from '@/constants'
+import { cn } from '@/lib/utils'
+import { getEvent, getEventSlugs } from '@/service'
 
 export default async function EventoPage({ params }: EventProps) {
-  const { slug } = await params;
+  const { slug } = await params
 
-  const event = await getEvent(slug);
+  const event = await getEvent(slug)
   const header = event?.calendar[0].header || {
-    firstLine: "",
-    secondLine: "",
-  };
+    firstLine: '',
+    secondLine: '',
+  }
 
   if (!event) {
-    return notFound();
+    return notFound()
   }
 
   return (
@@ -24,7 +25,7 @@ export default async function EventoPage({ params }: EventProps) {
         title={header.firstLine}
         subtitle={header.secondLine}
         color={event.bannerTextColor ?? DEFAULT_COLORS.event.banner.text}
-        className={cn("text-black")}
+        className={cn('text-black')}
       />
 
       <Banner.EventBanner
@@ -69,44 +70,44 @@ export default async function EventoPage({ params }: EventProps) {
         }
       />
     </>
-  );
+  )
 }
 
 export async function generateMetadata({
   params,
 }: EventProps): Promise<{ title: string; description: string }> {
-  const { slug } = await params;
+  const { slug } = await params
 
   const title = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
 
-  const event = await getEvent(slug);
+  const event = await getEvent(slug)
 
   if (!event) {
     return {
-      title: "Evento não encontrado",
-      description: "O evento solicitado não existe.",
-    };
+      title: 'Evento não encontrado',
+      description: 'O evento solicitado não existe.',
+    }
   }
 
   return {
     title,
     description: `${event.contentTitle}`,
-  };
+  }
 }
 
 export async function generateStaticParams() {
-  const slugs = await getEventSlugs();
+  const slugs = await getEventSlugs()
 
   return slugs.map((slug: string) => ({
     slug,
-  }));
+  }))
 }
 
 /**
  * Type definition for the EventProps.
  */
 type EventProps = {
-  params: Promise<{ slug: string }>;
-};
+  params: Promise<{ slug: string }>
+}

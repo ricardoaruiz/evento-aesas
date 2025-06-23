@@ -1,8 +1,10 @@
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { useMemo } from "react";
-import { CardProps } from "./card.types";
-import { Tag } from "./tag/tag.view";
+import Link from 'next/link'
+import { useMemo } from 'react'
+
+import { cn } from '@/lib/utils'
+
+import { CardProps } from './card.types'
+import { Tag } from './tag/tag.view'
 
 export function Card({
   slug,
@@ -24,20 +26,20 @@ export function Card({
 }: CardProps) {
   const contentTitleFontSize = useMemo(() => {
     switch (contentTileSize) {
-      case "small":
-        return "text-sm";
-      case "large":
-        return "text-xl";
-      case "medium":
+      case 'small':
+        return 'text-sm'
+      case 'large':
+        return 'text-xl'
+      case 'medium':
       default:
-        return "text-lg";
+        return 'text-lg'
     }
-  }, [contentTileSize]);
+  }, [contentTileSize])
 
   return (
     <div
       className={cn(
-        "relative flex flex-col overflow-hidden bg-transparent p-1",
+        'relative flex flex-col overflow-hidden bg-transparent p-1',
         className,
       )}
     >
@@ -54,7 +56,7 @@ export function Card({
       <div className="flex flex-col">
         <div
           className={cn(
-            "flex items-center justify-center rounded-t-md p-1 text-white",
+            'flex items-center justify-center rounded-t-md p-1 text-white',
             // gradientInternalColor,
           )}
           style={{ backgroundColor: color }}
@@ -70,7 +72,7 @@ export function Card({
       >
         <p
           className={cn(
-            "mx-auto w-full px-2 text-center font-bold",
+            'mx-auto w-full px-2 text-center font-bold',
             contentTitleFontSize,
           )}
         >
@@ -113,7 +115,7 @@ export function Card({
       {/* Footer */}
       <div
         className={cn(
-          "flex justify-center rounded-b-md bg-blue-500 py-1 text-lg text-white shadow-md",
+          'flex justify-center rounded-b-md bg-blue-500 py-1 text-lg text-white shadow-md',
           // gradientInternalColor,
         )}
         style={{ backgroundColor: color }}
@@ -121,5 +123,5 @@ export function Card({
         <p className="font-bold">{footerText}</p>
       </div>
     </div>
-  );
+  )
 }

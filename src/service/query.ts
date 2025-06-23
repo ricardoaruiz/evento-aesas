@@ -1,6 +1,6 @@
 export const CALENDAR_SLUG_QUERY = `*[_type == "calendar"]{
   slug
-}`;
+}`
 
 export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
   slug,
@@ -39,11 +39,11 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
     tagTextSize,
     tagVariant
   }
-}`;
+}`
 
 export const EVENTS_SLUG_QUERY = `*[_type == "event"]{
   "slug": title
-}`;
+}`
 
 export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
   "slug": title,
@@ -98,4 +98,4 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
       url
     }
   }
-}`;
+}`

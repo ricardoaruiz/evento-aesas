@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { AvatarProps } from "./avatar.types";
+import Image from 'next/image'
+
+import { AvatarProps } from './avatar.types'
 
 export function Avatar({ imageUrl, name, organization }: AvatarProps) {
   return (
@@ -17,5 +18,5 @@ export function Avatar({ imageUrl, name, organization }: AvatarProps) {
         <p className="text-base text-wrap">{organization}</p>
       </div>
     </div>
-  );
+  )
 }

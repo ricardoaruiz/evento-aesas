@@ -1,8 +1,10 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import logoMinistery from "../../../../public/images/logo_ministerio.svg";
-import logoSoldi from "../../../../public/images/logo_soldi.svg";
-import { CalendarFooterProps } from "./calendar-footer.types";
+import Image from 'next/image'
+
+import { cn } from '@/lib/utils'
+
+import logoMinistery from '../../../../public/images/logo_ministerio.svg'
+import logoSoldi from '../../../../public/images/logo_soldi.svg'
+import { CalendarFooterProps } from './calendar-footer.types'
 export function CalendarFooter({
   color,
   className,
@@ -11,8 +13,8 @@ export function CalendarFooter({
   return (
     <footer
       className={cn(
-        "flex flex-col gap-10 p-4 px-6 lg:flex-row lg:gap-2",
-        "inset-shadow-sm inset-shadow-gray-500",
+        'flex flex-col gap-10 p-4 px-6 lg:flex-row lg:gap-2',
+        'inset-shadow-sm inset-shadow-gray-500',
         className,
       )}
       style={{ backgroundColor: color }}
@@ -52,5 +54,5 @@ export function CalendarFooter({
         </div>
       </div>
     </footer>
-  );
+  )
 }

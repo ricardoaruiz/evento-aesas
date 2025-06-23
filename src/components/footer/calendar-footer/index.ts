@@ -1,1 +1,1 @@
-export { CalendarFooter } from "./calendar-footer.view";
+export { CalendarFooter } from './calendar-footer.view'

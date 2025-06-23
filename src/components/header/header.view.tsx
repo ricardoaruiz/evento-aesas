@@ -1,14 +1,16 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import logoAesas from "../../../public/images/logo-aesas.svg";
-import logoSenac from "../../../public/images/logo-senac.svg";
-import { BannerProps } from "./header.types";
+import Image from 'next/image'
+
+import { cn } from '@/lib/utils'
+
+import logoAesas from '../../../public/images/logo-aesas.svg'
+import logoSenac from '../../../public/images/logo-senac.svg'
+import { BannerProps } from './header.types'
 
 export function Header({ title, subtitle, color, className }: BannerProps) {
   return (
     <header
       className={cn(
-        "flex flex-col justify-between bg-white px-10 py-12 text-black md:flex-row",
+        'flex flex-col justify-between bg-white px-10 py-12 text-black md:flex-row',
         "bg-[url('/images/fundo.png')] bg-cover bg-center",
         className,
       )}
@@ -43,5 +45,5 @@ export function Header({ title, subtitle, color, className }: BannerProps) {
         </div>
       </div>
     </header>
-  );
+  )
 }

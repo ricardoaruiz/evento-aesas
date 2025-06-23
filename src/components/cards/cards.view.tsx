@@ -1,10 +1,10 @@
-import { CardProps } from "./card/card.types";
-import { Card } from "./card/card.view";
+import { CardProps } from './card/card.types'
+import { Card } from './card/card.view'
 
 type CardsProps = {
-  data: CardProps[];
-  color?: string;
-};
+  data: CardProps[]
+  color?: string
+}
 
 export function Cards({ data, color }: CardsProps) {
   return (
@@ -30,8 +30,8 @@ export function Cards({ data, color }: CardsProps) {
             tagVariant={item.tagVariant}
             className="flex min-h-[300px] w-full max-w-[300px] self-stretch"
           />
-        );
+        )
       })}
     </div>
-  );
+  )
 }

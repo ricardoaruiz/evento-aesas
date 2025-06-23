@@ -1,8 +1,8 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react'
 
-export type EventFooterProps = ComponentProps<"footer"> & {
-  color?: string;
-  textColor?: string;
-  registrationLink?: string;
-  registrationLinkGovernmentEmployee?: string;
-};
+export type EventFooterProps = ComponentProps<'footer'> & {
+  color?: string
+  textColor?: string
+  registrationLink?: string
+  registrationLinkGovernmentEmployee?: string
+}

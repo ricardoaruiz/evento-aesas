@@ -1,7 +1,9 @@
-import { DEFAULT_COLORS } from "@/constants";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { EventFooterProps } from "./event-footer.types";
+import Image from 'next/image'
+
+import { DEFAULT_COLORS } from '@/constants'
+import { cn } from '@/lib/utils'
+
+import { EventFooterProps } from './event-footer.types'
 
 export function EventFooter({
   color,
@@ -10,12 +12,12 @@ export function EventFooter({
   registrationLinkGovernmentEmployee,
 }: EventFooterProps) {
   const hasSomeRegistrationLinks =
-    registrationLink || registrationLinkGovernmentEmployee;
-  const defaultRegistrationLink = "https://www.aesas.com.br";
+    registrationLink || registrationLinkGovernmentEmployee
+  const defaultRegistrationLink = 'https://www.aesas.com.br'
   return (
     <footer
       className={cn(
-        "flex flex-col items-center justify-between gap-12 p-8 text-xl lg:flex-row lg:gap-14",
+        'flex flex-col items-center justify-between gap-12 p-8 text-xl lg:flex-row lg:gap-14',
       )}
       style={{
         backgroundColor: color ?? DEFAULT_COLORS.event.footer.background,
@@ -83,5 +85,5 @@ export function EventFooter({
         />
       </div>
     </footer>
-  );
+  )
 }
