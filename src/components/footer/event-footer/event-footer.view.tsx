@@ -48,7 +48,7 @@ export function EventFooter({
                 href={registrationLink ?? defaultRegistrationLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base transition-colors duration-300 hover:text-zinc-300 md:text-xl"
+                className="animate-pulse text-base underline transition-colors duration-300 hover:text-zinc-300 md:text-xl"
               >
                 clique aqui para se inscrever
               </a>
@@ -66,7 +66,7 @@ export function EventFooter({
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base transition-colors duration-300 hover:text-zinc-300 md:text-xl"
+                className="animate-pulse text-base underline transition-colors duration-300 hover:text-zinc-300 md:text-xl"
               >
                 clique aqui para pré-inscrição
               </a>
