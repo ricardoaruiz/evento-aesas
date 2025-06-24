@@ -1,6 +1,6 @@
 import './globals.css'
 
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Arimo } from 'next/font/google'
 import localFont from 'next/font/local'
@@ -42,6 +42,7 @@ export default function RootLayout({
           {children}
         </div>
       </body>
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID!} />
       <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID!} />
     </html>
   )
