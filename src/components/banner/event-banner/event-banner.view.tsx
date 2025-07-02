@@ -15,8 +15,8 @@ export function EventBanner({
   presencialDates,
   presencialHours,
   workload,
-  imageUrlLeft = '/images/event-banner-default-bg.png',
-  imageUrlRight = '/images/event-banner-default-bg.png',
+  imageUrlLeft = '/images/event-banner-default-bg.webp',
+  imageUrlRight = '/images/event-banner-default-bg.webp',
   bannerTextColor,
 }: EventBannerProps) {
   const isOnline = type === 'aulas on-line'

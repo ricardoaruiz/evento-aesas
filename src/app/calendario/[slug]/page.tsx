@@ -50,7 +50,7 @@ export default async function CalendarPage({ params }: CalendarProps) {
         color={calendar.color.hex}
         className={cn('text-white')}
       />
-      <section className="flex-1 items-center justify-center bg-white bg-[url('/images/fundo.png')] bg-cover bg-center px-1 py-4 text-black md:px-10">
+      <section className="flex-1 items-center justify-center bg-white bg-[url('/images/fundo.webp')] bg-cover bg-center px-1 py-4 text-black md:px-10">
         <div className="container mx-auto max-w-[1000px]">
           <Cards data={events} color={calendar.color.hex} />
         </div>

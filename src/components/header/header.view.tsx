@@ -11,7 +11,7 @@ export function Header({ title, subtitle, color, className }: BannerProps) {
     <header
       className={cn(
         'flex flex-col justify-between bg-white px-10 py-12 text-black md:flex-row',
-        "bg-[url('/images/fundo.png')] bg-cover bg-center",
+        "bg-[url('/images/fundo.webp')] bg-cover bg-center",
         className,
       )}
       style={{ color }}
