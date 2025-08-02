@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { EventPageContent } from '@/components/event'
 import { getEvent } from '@/service'
 
-import type { EventProps } from './generate-functions'
+import type { EventProps } from '../generate-functions'
 
 /*
  * Main component for the event page.
@@ -15,7 +15,9 @@ export default async function EventoPage({ params }: EventProps) {
   const event = await getEvent(slug)
 
   if (!event) return notFound()
-  return <EventPageContent event={event} />
+  return (
+    <EventPageContent event={event} showRegistrationLinksIfExists={false} />
+  )
 }
 
-export { generateMetadata, generateStaticParams } from './generate-functions'
+export { generateMetadata, generateStaticParams } from '../generate-functions'

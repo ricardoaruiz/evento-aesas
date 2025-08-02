@@ -10,9 +10,11 @@ export function EventFooter({
   textColor,
   registrationLink,
   registrationLinkGovernmentEmployee,
+  showRegistrationLinksIfExists = true,
 }: EventFooterProps) {
   const hasSomeRegistrationLinks =
-    registrationLink || registrationLinkGovernmentEmployee
+    showRegistrationLinksIfExists &&
+    (registrationLink || registrationLinkGovernmentEmployee)
   const defaultRegistrationLink = 'https://www.aesas.com.br'
   return (
     <footer

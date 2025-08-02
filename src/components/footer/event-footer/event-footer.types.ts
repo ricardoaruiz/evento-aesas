@@ -5,4 +5,5 @@ export type EventFooterProps = ComponentProps<'footer'> & {
   textColor?: string
   registrationLink?: string
   registrationLinkGovernmentEmployee?: string
+  showRegistrationLinksIfExists?: boolean
 }
