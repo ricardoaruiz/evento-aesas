@@ -27,16 +27,17 @@ export function EventFooter({
       }}
     >
       {!hasSomeRegistrationLinks && (
-        <>
+        <div className="flex flex-col items-center gap-10 lg:ml-25 lg:flex-row lg:gap-20">
+          <p>Inscrição</p>
           <a
             href={registrationLink ?? defaultRegistrationLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-4xl font-bold transition-colors duration-300 hover:text-zinc-400"
+            className="text-2xl font-bold transition-colors duration-300 hover:text-zinc-400 md:text-4xl"
           >
             WWW.AESAS.COM.BR
           </a>
-        </>
+        </div>
       )}
 
       {hasSomeRegistrationLinks && (
@@ -77,15 +78,28 @@ export function EventFooter({
         </div>
       )}
 
-      <div>
-        <p>Organização</p>
-        <Image
-          src="/images/logo_soldi.svg"
-          alt="Aesas Logo"
-          width={100}
-          height={50}
-        />
-      </div>
+      {!hasSomeRegistrationLinks && (
+        <div className="flex flex-col items-center gap-10 lg:mr-20 lg:flex-row lg:gap-25">
+          <p>Organização</p>
+          <Image
+            src="/images/logo_soldi.svg"
+            alt="Aesas Logo"
+            width={100}
+            height={50}
+          />
+        </div>
+      )}
+      {hasSomeRegistrationLinks && (
+        <div>
+          <p>Organização</p>
+          <Image
+            src="/images/logo_soldi.svg"
+            alt="Aesas Logo"
+            width={100}
+            height={50}
+          />
+        </div>
+      )}
     </footer>
   )
 }
