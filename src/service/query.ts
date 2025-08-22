@@ -47,6 +47,7 @@ export const EVENTS_SLUG_QUERY = `*[_type == "event"]{
 
 export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
   "slug": title,
+  isHibrid,
   color {
     hex
   },

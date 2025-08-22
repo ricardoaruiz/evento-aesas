@@ -13,7 +13,7 @@ export function Avatar({ imageUrl, name, organization }: AvatarProps) {
           className="rounded-full object-cover"
         />
       </div>
-      <div className="flex w-48 flex-col items-center justify-center gap-1 text-center text-zinc-800">
+      <div className="flex w-50 flex-col items-center justify-center gap-1 text-center text-zinc-800">
         <p className="text-lg font-bold">{name}</p>
         <p className="text-base text-wrap">{organization}</p>
       </div>

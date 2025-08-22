@@ -59,6 +59,17 @@ export function EventView({
         </section>
       )}
 
+      {event.isHibrid && (
+        <div className="flex justify-center bg-zinc-200 px-10 py-5 text-2xl md:px-50 md:py-8 md:text-4xl/relaxed">
+          <p
+            className="text-center font-bold"
+            style={{ color: event.color?.hex }}
+          >
+            GRATUITO PARA PROFISSIONAIS DE ÓRGÃOS AMBIENTAIS DE TODO O PAÍS
+          </p>
+        </div>
+      )}
+
       <Footer.EventFooter
         color={event.color?.hex}
         textColor={event.footerTextColor}

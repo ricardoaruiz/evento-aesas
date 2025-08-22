@@ -11,6 +11,7 @@ export type CalendarBanner = {
 export type Event = {
   slug: string
   isActive: boolean
+  isHibrid: boolean
   title: string
   contentTitle: string
   contentDescription: string
