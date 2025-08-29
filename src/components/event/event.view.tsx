@@ -12,7 +12,7 @@ export function EventView({
   showInstructors = true,
   showRegistrationLinksIfExists = true,
 }: EventViewProps) {
-  const header = event?.calendar[0].header || {
+  const header = event?.calendar[0]?.header || {
     firstLine: '',
     secondLine: '',
   }
