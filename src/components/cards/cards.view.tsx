@@ -8,7 +8,8 @@ type CardsProps = {
 
 export function Cards({ data, color }: CardsProps) {
   return (
-    <div className="container mx-auto grid grid-cols-1 place-items-center gap-1 md:grid-cols-2 lg:grid-cols-3">
+    // <div className="container mx-auto grid grid-cols-1 place-items-center gap-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="container mx-auto flex flex-wrap items-center justify-center gap-2">
       {data.map((item, index) => {
         return (
           <Card
