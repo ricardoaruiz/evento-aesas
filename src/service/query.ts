@@ -1,4 +1,4 @@
-export const CALENDAR_SLUG_QUERY = `*[_type == "calendar"]{
+export const CALENDAR_SLUG_QUERY = `*[_type == "calendar"] | order(_createdAt asc){
   slug
 }`
 
