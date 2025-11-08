@@ -1,14 +1,15 @@
 /** biome-ignore-all lint/nursery/useConsistentTypeDefinitions: is not important here */
-import type { Metadata } from 'next';
-import { DOMAIN_URL } from '@/constants';
+import type { Metadata } from 'next'
+
+import { DOMAIN_URL } from '@/constants'
 
 interface GenerateMetadataParams {
-  title?: string;
-  description?: string;
-  image?: string;
-  alternativeImage?: string;
-  url?: string;
-  keywords?: string[];
+  title?: string
+  description?: string
+  image?: string
+  alternativeImage?: string
+  url?: string
+  keywords?: string[]
 }
 
 export function generateMetadata({
@@ -19,15 +20,13 @@ export function generateMetadata({
   url = '/',
   keywords = [],
 }: GenerateMetadataParams = {}): Metadata {
-  const domain = DOMAIN_URL.endsWith('/')
-    ? DOMAIN_URL.slice(0, -1)
-    : DOMAIN_URL;
+  const domain = DOMAIN_URL.endsWith('/') ? DOMAIN_URL.slice(0, -1) : DOMAIN_URL
 
-  const baseUrl = domain;
-  const fullUrl = `${baseUrl}${url}`;
-  const fullImageUrl = `${baseUrl}${image}`;
+  const baseUrl = domain
+  const fullUrl = `${baseUrl}${url}`
+  const fullImageUrl = `${baseUrl}${image}`
 
-  const images = alternativeImage ? [alternativeImage] : [fullImageUrl];
+  const images = alternativeImage ? [alternativeImage] : [fullImageUrl]
 
   return {
     title: {
@@ -79,5 +78,5 @@ export function generateMetadata({
     verification: {
       // google: 'seu-codigo-de-verificacao-aqui', // Adicione quando configurar o Google Search Console
     },
-  };
+  }
 }

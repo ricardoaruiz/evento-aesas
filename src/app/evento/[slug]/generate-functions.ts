@@ -1,6 +1,7 @@
-import { getEvent, getEventSlugs } from '@/service'
-import { generateMetadata as generateMetadataInternal } from '@/lib/metadata'
 import { Metadata } from 'next'
+
+import { generateMetadata as generateMetadataInternal } from '@/lib/metadata'
+import { getEvent, getEventSlugs } from '@/service'
 
 /**
  * Type definition for the EventProps.
@@ -32,7 +33,6 @@ export async function generateMetadata({
     }
   }
 
-  
   return generateMetadataInternal({
     title,
     description: event.contentTitle,
