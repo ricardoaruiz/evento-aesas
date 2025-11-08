@@ -1,4 +1,6 @@
 import { getEvent, getEventSlugs } from '@/service'
+import { generateMetadata as generateMetadataInternal } from '@/lib/metadata'
+import { Metadata } from 'next'
 
 /**
  * Type definition for the EventProps.
@@ -14,7 +16,7 @@ export type EventProps = {
  */
 export async function generateMetadata({
   params,
-}: EventProps): Promise<{ title: string; description: string }> {
+}: EventProps): Promise<Metadata> {
   const { slug } = await params
 
   const title = slug
@@ -30,10 +32,13 @@ export async function generateMetadata({
     }
   }
 
-  return {
+  
+  return generateMetadataInternal({
     title,
-    description: `${event.contentTitle}`,
-  }
+    description: event.contentTitle,
+    alternativeImage: event.bannerRightImage.url,
+    url: `/evento/${slug}`,
+  })
 }
 
 /**
