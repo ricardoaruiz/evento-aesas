@@ -41,7 +41,7 @@ export const CALENDAR_QUERY = `*[_type == "calendar" && slug == $slug]{
   }
 }`
 
-export const EVENTS_SLUG_QUERY = `*[_type == "event"]{
+export const EVENTS_SLUG_QUERY = `*[_type == "event" && isActive == true]{
   "slug": title
 }`
 
