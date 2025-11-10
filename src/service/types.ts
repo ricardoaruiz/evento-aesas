@@ -8,6 +8,16 @@ export type CalendarBanner = {
   secondLine: string
 }
 
+export type ProgramContent = {
+  content?: string[]
+  registerAssociantedAndNonAssociantedButtonLabel?: string
+  registrationLink?: string
+  oemasTitle?: string
+  oemasDisclaimerText?: string
+  registerOemasButtonLabel?: string
+  registrationLinkGovernmentEmployee?: string
+}
+
 export type Event = {
   slug: string
   isActive: boolean
@@ -39,6 +49,7 @@ export type Event = {
   bannerLeftImage: Image
   bannerRightImage: Image
   instructors?: Person[]
+  programContent: ProgramContent
 }
 
 export type Calendar = {

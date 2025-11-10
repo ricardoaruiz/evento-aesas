@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 
 import { Avatar } from '../avatar'
 import { Banner } from '../banner'
+import { EventContentView } from '../event-content'
 import { Footer } from '../footer'
 import { Header } from '../header'
 import { EventViewProps } from './event.types'
@@ -11,6 +12,7 @@ export function EventView({
   event,
   showInstructors = true,
   showRegistrationLinksIfExists = true,
+  showContent = false,
 }: EventViewProps) {
   const header = event?.calendar[0]?.header || {
     firstLine: '',
@@ -78,6 +80,13 @@ export function EventView({
           event.registrationLinkGovernmentEmployee
         }
         showRegistrationLinksIfExists={showRegistrationLinksIfExists}
+      />
+
+      <EventContentView
+        data={event.programContent}
+        isVisible={showContent}
+        color={event.color?.hex}
+        textColor={event.footerTextColor}
       />
     </>
   )

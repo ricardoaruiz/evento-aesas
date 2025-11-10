@@ -98,5 +98,14 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
       size,
       url
     }
+  },
+  "programContent": {
+    content,
+    registerAssociantedAndNonAssociantedButtonLabel,
+    registrationLink,
+    oemasTitle,
+    oemasDisclaimerText,
+    registerOemasButtonLabel,
+    registrationLinkGovernmentEmployee
   }
 }`
