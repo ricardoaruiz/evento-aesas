@@ -121,12 +121,13 @@ export function EventBanner({
       </div>
 
       {/* Right Side */}
-      <div className={`relative min-h-[600px] flex-1`}>
+      <div className="relative min-h-[400px] w-full flex-1 sm:min-h-[500px] lg:min-h-[600px]">
         <Image
           src={imageUrlRight}
           alt="Event Banner Right"
           fill
-          className="object-fit h-full w-full sm:object-cover"
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
         />
       </div>
     </div>
