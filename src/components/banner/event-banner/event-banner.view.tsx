@@ -50,14 +50,18 @@ export function EventBanner({
         <div className="flex flex-1 flex-col justify-center gap-2">
           {associatedPrice && (
             <p className="text-xl">
-              <span className="font-bold">VALOR ASSOCIADO:</span>{' '}
+              <span className="font-bold">
+                <span className="hidden md:inline">VALOR </span>ASSOCIADO:
+              </span>{' '}
               {associatedPrice}
             </p>
           )}
 
           {nonAssociatedPrice && (
             <p className="text-xl">
-              <span className="font-bold">VALOR NÃO ASSOCIADO:</span>{' '}
+              <span className="font-bold">
+                <span className="hidden md:inline">VALOR </span>NÃO ASSOCIADO:
+              </span>{' '}
               {nonAssociatedPrice}
             </p>
           )}
