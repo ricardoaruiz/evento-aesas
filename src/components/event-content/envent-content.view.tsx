@@ -42,11 +42,11 @@ export function EventContentView({
     <div className="flex flex-col items-center gap-10 bg-zinc-100 px-10 py-15 text-black">
       {content && (
         <>
-          <h2 className="self-center text-center text-2xl font-bold">
+          <h2 className="self-center text-center text-3xl font-bold">
             CONTEÚDO PROGRAMÁTICO
           </h2>
 
-          <ul className="mx-auto w-full max-w-[750px] list-disc space-y-2 self-start text-xl">
+          <ul className="mx-auto w-full max-w-[750px] list-disc self-start text-2xl/relaxed text-justify space-y-5">
             {content.map((line, idx) => (
               <li key={idx}>{line}</li>
             ))}
