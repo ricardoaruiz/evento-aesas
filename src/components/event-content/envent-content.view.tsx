@@ -46,7 +46,7 @@ export function EventContentView({
             CONTEÚDO PROGRAMÁTICO
           </h2>
 
-          <ul className="mx-auto w-full max-w-[750px] list-disc self-start text-2xl/relaxed text-justify space-y-5">
+          <ul className="mx-auto w-full max-w-[750px] list-disc space-y-5 self-start text-justify text-2xl/relaxed">
             {content.map((line, idx) => (
               <li key={idx}>{line}</li>
             ))}
