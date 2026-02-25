@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { DEFAULT_COLORS } from '@/constants'
 import { cn } from '@/lib/utils'
 
@@ -11,6 +13,7 @@ import { EventViewProps } from './event.types'
 export function EventView({
   event,
   showInstructors = true,
+  showSponsors = true,
   showRegistrationLinksIfExists = true,
   showContent = false,
 }: EventViewProps) {
@@ -42,6 +45,26 @@ export function EventView({
         imageUrlRight={event.bannerRightImage?.url}
         bannerTextColor={event.bannerTextColor}
       />
+
+      {showSponsors && !!event.sponsors && (
+        <section className="flex flex-col items-center gap-8 bg-zinc-200 px-6 py-8">
+          <h2 className="font-glacial self-start text-3xl text-black">
+            PATROCINADORES
+          </h2>
+          <div className="flex max-w-[1000px] flex-wrap items-center justify-center gap-8">
+            {event.sponsors.map((sponsor, idx) => (
+              <Image
+                key={idx}
+                src={sponsor.image.url}
+                alt={sponsor.name}
+                width={200}
+                height={200}
+                className="rounded-3xl object-cover drop-shadow-lg"
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       {showInstructors && !!event.instructors && (
         <section className="flex flex-col items-center gap-8 bg-zinc-100 px-6 py-8">

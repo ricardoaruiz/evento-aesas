@@ -49,6 +49,7 @@ export type Event = {
   bannerLeftImage: Image
   bannerRightImage: Image
   instructors?: Person[]
+  sponsors?: Sponsor[]
   programContent: ProgramContent
 }
 
@@ -77,5 +78,11 @@ export type Person = {
   slug: string
   name: string
   organization: string
+  image: Image
+}
+
+export type Sponsor = {
+  slug: string
+  name: string
   image: Image
 }

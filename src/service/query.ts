@@ -99,6 +99,17 @@ export const EVENTS_QUERY = `*[_type == "event" && title == $slug]{
       url
     }
   },
+  "sponsors": sponsors[]->{
+    slug,
+    name,
+    "image": image.asset->{
+      uploadId,
+      mimeType,
+      originalFilename,
+      size,
+      url
+    }
+  },  
   "programContent": {
     content,
     registerAssociantedAndNonAssociantedButtonLabel,
