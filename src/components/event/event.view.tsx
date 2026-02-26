@@ -95,6 +95,13 @@ export function EventView({
         </div>
       )}
 
+      <EventContentView
+        data={event.programContent}
+        isVisible={showContent}
+        color={event.color?.hex}
+        textColor={event.footerTextColor}
+      />
+
       <Footer.EventFooter
         color={event.color?.hex}
         textColor={event.footerTextColor}
@@ -103,13 +110,6 @@ export function EventView({
           event.registrationLinkGovernmentEmployee
         }
         showRegistrationLinksIfExists={showRegistrationLinksIfExists}
-      />
-
-      <EventContentView
-        data={event.programContent}
-        isVisible={showContent}
-        color={event.color?.hex}
-        textColor={event.footerTextColor}
       />
     </>
   )

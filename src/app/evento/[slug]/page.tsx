@@ -15,7 +15,7 @@ export default async function EventoPage({ params }: EventProps) {
   const event = await getEvent(slug)
 
   if (!event) return notFound()
-  return <EventPageContent event={event} />
+  return <EventPageContent event={event} showContent />
 }
 
 export { generateMetadata, generateStaticParams } from './generate-functions'

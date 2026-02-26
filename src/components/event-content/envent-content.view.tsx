@@ -1,31 +1,27 @@
-import Image from 'next/image'
-
-import { DEFAULT_COLORS } from '@/constants'
-
 import { EventContentViewProps } from './event-content.types'
 
 export function EventContentView({
   data,
   isVisible,
-  color,
-  textColor,
+  // color,
+  // textColor,
 }: EventContentViewProps) {
   const {
     content,
     registerAssociantedAndNonAssociantedButtonLabel,
-    registrationLink,
+    // registrationLink,
     oemasTitle,
     oemasDisclaimerText,
     registerOemasButtonLabel,
-    registrationLinkGovernmentEmployee,
+    // registrationLinkGovernmentEmployee,
   } = data
 
-  const hasSomeData =
-    !!content?.length ||
-    !!registerAssociantedAndNonAssociantedButtonLabel ||
-    !!oemasTitle ||
-    !!oemasDisclaimerText ||
-    !!registerOemasButtonLabel
+  // const hasSomeData =
+  //   !!content?.length ||
+  //   !!registerAssociantedAndNonAssociantedButtonLabel ||
+  //   !!oemasTitle ||
+  //   !!oemasDisclaimerText ||
+  //   !!registerOemasButtonLabel
 
   if (
     !isVisible ||
@@ -39,7 +35,7 @@ export function EventContentView({
   }
 
   return (
-    <div className="flex flex-col items-center gap-10 bg-zinc-100 px-10 py-15 text-black">
+    <div className="flex flex-col items-center gap-10 bg-zinc-100/90 px-10 py-15 text-black">
       {content && (
         <>
           <h2 className="self-center text-center text-3xl font-bold">
@@ -54,7 +50,7 @@ export function EventContentView({
         </>
       )}
 
-      {registerAssociantedAndNonAssociantedButtonLabel && (
+      {/* {registerAssociantedAndNonAssociantedButtonLabel && (
         <>
           <Image
             src="/images/double_arrow_down.png"
@@ -82,9 +78,9 @@ export function EventContentView({
           <p className="text-center text-xl font-bold">{oemasTitle}</p>
           <p className="max-w-3xl text-center text-lg">{oemasDisclaimerText}</p>
         </div>
-      )}
+      )} */}
 
-      {registerOemasButtonLabel && (
+      {/* {registerOemasButtonLabel && (
         <>
           <a
             href={registrationLinkGovernmentEmployee ?? '#'}
@@ -106,9 +102,9 @@ export function EventContentView({
             height={18}
           />
         </>
-      )}
+      )} */}
 
-      {hasSomeData && (
+      {/* {hasSomeData && (
         <a
           href="https://www.aesas.com.br"
           target="_blank"
@@ -123,7 +119,7 @@ export function EventContentView({
             height={22}
           />
         </a>
-      )}
+      )} */}
     </div>
   )
 }
