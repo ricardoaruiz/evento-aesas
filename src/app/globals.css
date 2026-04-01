@@ -126,3 +126,44 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes oemas-float {
+  0% {
+    transform: translate3d(0px, -3px, 0) rotate(24.7deg) scale(0.996);
+  }
+  12.5% {
+    transform: translate3d(3px, -5px, 0) rotate(25.3deg) scale(1.002);
+  }
+  25% {
+    transform: translate3d(5px, -3px, 0) rotate(25.8deg) scale(1.007);
+  }
+  37.5% {
+    transform: translate3d(3px, 1px, 0) rotate(25.1deg) scale(1.003);
+  }
+  50% {
+    transform: translate3d(0px, 3px, 0) rotate(24.4deg) scale(0.995);
+  }
+  62.5% {
+    transform: translate3d(-3px, 1px, 0) rotate(24.8deg) scale(0.998);
+  }
+  75% {
+    transform: translate3d(-5px, -3px, 0) rotate(25.4deg) scale(1.004);
+  }
+  87.5% {
+    transform: translate3d(-3px, -5px, 0) rotate(25deg) scale(1.001);
+  }
+  100% {
+    transform: translate3d(0px, -3px, 0) rotate(24.7deg) scale(0.996);
+  }
+}
+
+.oemas-float {
+  animation: oemas-float 9.5s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oemas-float {
+    animation: none;
+  }
+}

@@ -18,13 +18,15 @@ export function EventBanner({
   imageUrlLeft = '/images/event-banner-default-bg.webp',
   imageUrlRight = '/images/event-banner-default-bg.webp',
   bannerTextColor,
+  isOnlyOemas,
+  // oemasTagColor,
 }: EventBannerProps) {
   const isOnline = type === 'aulas on-line'
   const isPresencial = type === 'aulas presenciais'
   const isHibrid = type === 'aulas on-line e presenciais'
 
   return (
-    <div className="flex flex-col-reverse drop-shadow-xl lg:flex-row">
+    <div className="relative flex flex-col-reverse overflow-hidden drop-shadow-xl lg:flex-row">
       {/* Left Side */}
       <div
         className="relative flex flex-1 flex-col gap-16 bg-cover bg-center p-6"
@@ -33,17 +35,32 @@ export function EventBanner({
           color: bannerTextColor ?? DEFAULT_COLORS.event.banner.text,
         }}
       >
+        {/* {isOnlyOemas && (
+          <>
+            <div className="oemas-float absolute top-0 right-0 z-20 hidden md:block">
+              <Stamp color={oemasTagColor} text="EXCLUSIVO OEMAS" size={150} />
+            </div>
+            <div className="oemas-float absolute top-0 right-0 z-20 block md:hidden">
+              <Stamp color={oemasTagColor} text="EXCLUSIVO OEMAS" size={110} />
+            </div>
+          </>
+        )} */}
         <div className="pt-4">
-          <h2 className="text-center text-2xl tracking-widest md:text-left md:text-4xl">
+          <h2 className="text-center text-xl tracking-widest md:text-left md:text-4xl">
             {type}
           </h2>
         </div>
 
         {/* Title */}
-        <div className="flex flex-1 items-center">
+        <div className="flex flex-1 flex-col items-center gap-4 md:items-start">
           <h2 className="text-center text-3xl font-extrabold md:text-left md:text-4xl lg:text-[3.25rem]">
             {name}
           </h2>
+          {isOnlyOemas && (
+            <p className="text-center text-base font-bold tracking-wide text-red-500 uppercase md:text-left">
+              EXCLUSIVO PARA SERVIDORES DE ORGÃOS AMBIENTAIS
+            </p>
+          )}
         </div>
 
         {/* Pricing */}

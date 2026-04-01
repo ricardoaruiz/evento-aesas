@@ -11,4 +11,6 @@ export type EventBannerProps = {
   imageUrlLeft?: string
   imageUrlRight?: string
   bannerTextColor?: string
+  isOnlyOemas?: boolean
+  oemasTagColor?: string
 }

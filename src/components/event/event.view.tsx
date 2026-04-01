@@ -17,6 +17,9 @@ export function EventView({
   showRegistrationLinksIfExists = true,
   showContent = false,
 }: EventViewProps) {
+  const isOnlyOemas =
+    !event.registrationLink && !!event.registrationLinkGovernmentEmployee
+
   const header = event?.calendar[0]?.header || {
     firstLine: '',
     secondLine: '',
@@ -44,6 +47,8 @@ export function EventView({
         imageUrlLeft={event.bannerLeftImage?.url}
         imageUrlRight={event.bannerRightImage?.url}
         bannerTextColor={event.bannerTextColor}
+        isOnlyOemas={isOnlyOemas}
+        oemasTagColor={event.color?.hex}
       />
 
       {showSponsors && !!event.sponsors && (
