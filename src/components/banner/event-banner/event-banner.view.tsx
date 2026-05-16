@@ -130,7 +130,8 @@ export function EventBanner({
                   'pl-2': isHibrid,
                 })}
               >
-                <span className="font-bold">HORÁRIO:</span> {presencialHours}
+                {presencialHours && <span className="font-bold">HORÁRIO:</span>}{' '}
+                {presencialHours}
               </p>
             </div>
           )}

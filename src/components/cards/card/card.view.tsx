@@ -80,19 +80,21 @@ export function Card({
         </p>
         <p className="text-center font-bold">{contentDescription}</p>
 
-        <div className="flex flex-col items-center">
-          <p className="text-center">
-            <span className="mr-1 font-bold">ONLINE:</span>
-            <span>{onlineTime}</span>
-          </p>
-          <p className="text-center">{onlineDates}</p>
-        </div>
+        {onlineTime && onlineDates && (
+          <div className="flex flex-col items-center">
+            <p className="text-center">
+              <span className="mr-1 font-bold">ONLINE:</span>
+              <span>{onlineTime}</span>
+            </p>
+            <p className="text-center">{onlineDates}</p>
+          </div>
+        )}
 
-        {presencialTime && presencialDates && (
+        {(presencialTime || presencialDates) && (
           <div className="flex flex-col items-center">
             <p className="text-center">
               <span className="mr-1 font-bold">PRESENCIAL:</span>
-              <span>{presencialTime}</span>
+              {presencialTime && <span>{presencialTime}</span>}
             </p>
             <p className="text-center">{presencialDates}</p>
           </div>
