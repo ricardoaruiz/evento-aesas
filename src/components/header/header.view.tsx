@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 import logoAesas from '../../../public/images/logo-aesas.svg'
-import logoSenac from '../../../public/images/logo-senac.svg'
 import { BannerProps } from './header.types'
 
 export function Header({ title, subtitle, color, className }: BannerProps) {
@@ -34,12 +33,12 @@ export function Header({ title, subtitle, color, className }: BannerProps) {
                 width={100}
                 height={100}
               />
-              <Image
+              {/* <Image
                 src={logoSenac}
                 alt="logo senac"
                 width={100}
                 height={100}
-              />
+              /> */}
             </div>
           </div>
         </div>
